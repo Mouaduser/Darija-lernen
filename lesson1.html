@@ -103,6 +103,20 @@
         .correct { background: var(--success) !important; color: white; border-color: var(--success); }
         .wrong { background: var(--error) !important; color: white; border-color: var(--error); }
 
+        .restart-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .restart-btn:hover { background-color: var(--success); }
+
         .progress-bar {
             height: 10px;
             background-color: #eee;
@@ -215,7 +229,9 @@
     <div id="quiz-box">
         <span class="question" id="quiz-question">Lädt Frage...</span>
         <div class="options" id="quiz-options"></div>
-        <p id="quiz-result" style="margin-top: 15px; font-weight: bold;"></p>
+        <div id="quiz-footer" style="text-align: center;">
+            <p id="quiz-result" style="margin-top: 15px; font-weight: bold;"></p>
+        </div>
     </div>
 </div>
 
@@ -242,8 +258,16 @@
     let score = 0;
 
     function loadQuestion() {
+        const quizBox = document.getElementById('quiz-box');
+        
         if(currentQ >= quizData.length) {
-            document.getElementById('quiz-box').innerHTML = `<h3>Ergebnis: ${score}/${quizData.length} 🎉</h3><p>Mabruk! Du hast das Intro abgeschlossen.</p>`;
+            document.getElementById('progress-fill').style.width = "100%";
+            quizBox.innerHTML = `
+                <div style="text-align: center;">
+                    <h3>Ergebnis: ${score}/${quizData.length} 🎉</h3>
+                    <p>Mabruk! Du hast das Intro abgeschlossen.</p>
+                    <button class="restart-btn" onclick="restartQuiz()">Quiz neu starten 🔄</button>
+                </div>`;
             return;
         }
         
@@ -251,10 +275,17 @@
         const progress = (currentQ / quizData.length) * 100;
         document.getElementById('progress-fill').style.width = progress + "%";
 
+        // Reset Box for new question if it was cleared by restart
+        quizBox.innerHTML = `
+            <span class="question" id="quiz-question"></span>
+            <div class="options" id="quiz-options"></div>
+            <div id="quiz-footer" style="text-align: center;">
+                <p id="quiz-result" style="margin-top: 15px; font-weight: bold;"></p>
+            </div>`;
+
         const data = quizData[currentQ];
         document.getElementById('quiz-question').innerText = `Frage ${currentQ + 1}: ${data.q}`;
         const optionsContainer = document.getElementById('quiz-options');
-        optionsContainer.innerHTML = "";
         
         data.o.forEach((opt, index) => {
             const btn = document.createElement('button');
@@ -282,9 +313,14 @@
 
         setTimeout(() => {
             currentQ++;
-            document.getElementById('quiz-result').innerText = "";
             loadQuestion();
         }, 1500);
+    }
+
+    function restartQuiz() {
+        currentQ = 0;
+        score = 0;
+        loadQuestion();
     }
 
     loadQuestion();
