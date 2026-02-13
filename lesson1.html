@@ -1,230 +1,235 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning Darija – Introduction to Moroccan Arabic</title>
+    <title>1. Intro to Darija 🇲🇦</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
-    :root {
-        --primary-color: #2c3e50;
-        --secondary-color: #2980b9;
-        --accent-color: #f39c12;
-        --bg-color: #f0f2f5;
-        --card-bg: #ffffff;
-        --text-color: #333;
-    }
-    body {
-        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-        line-height: 1.6;
-        background-color: var(--bg-color);
-        color: var(--text-color);
-        margin: 0;
-        padding: 0;
-    }
-
-    .back-btn {
-        display: inline-block;
-        margin: 15px;
-        padding: 12px 20px;
-        background-color: var(--primary-color);
-        color: white;
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: bold;
-        font-size: 0.9rem;
-        transition: transform 0.2s, background 0.3s;
-    }
-    .back-btn:active { transform: scale(0.95); }
-
-    .container {
-        width: 95%;
-        max-width: 800px;
-        margin: 0 auto 40px auto;
-    }
-
-    .lesson-card {
-        background: var(--card-bg);
-        padding: 20px 15px;
-        border-radius: 16px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    }
-
-    header {
-        border-bottom: 3px solid var(--secondary-color);
-        margin-bottom: 20px;
-        padding-bottom: 10px;
-    }
-    h1 {
-        color: var(--primary-color);
-        font-size: 1.4rem;
-        margin: 0 0 10px 0;
-        line-height: 1.2;
-    }
-    .date-author {
-        color: #888;
-        font-size: 0.8rem;
-    }
-
-    h2 {
-        color: var(--secondary-color);
-        margin-top: 30px;
-        border-left: 5px solid var(--accent-color);
-        padding-left: 12px;
-        font-size: 1.15rem;
-    }
-
-    .info-box {
-        background-color: #e8f4fd;
-        border-left: 5px solid var(--secondary-color);
-        padding: 15px;
-        margin: 20px 0;
-        font-style: italic;
-        border-radius: 0 8px 8px 0;
-        font-size: 0.95rem;
-    }
-
-    .strategy-list { list-style-type: none; padding: 0; }
-    .strategy-list li {
-        margin-bottom: 10px;
-        display: flex;
-        align-items: flex-start;
-    }
-    .strategy-list li:before { content: "✅"; margin-right: 10px; }
-
-    /* --- Responsive Table Fix --- */
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 20px 0;
-    }
-
-    @media screen and (max-width: 600px) {
-        table, thead, tbody, th, td, tr {
-            display: block;
-        }
-        thead { display: none; } /* Kopfzeile verstecken */
-
-        tr {
-            background: #f8f9fa;
-            border: 1px solid #eee;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            padding: 10px;
+        :root {
+            --primary: #c1272d;
+            --secondary: #006233;
+            --accent: #e67e22;
+            --bg: #fdfcfb;
+            --card-bg: #ffffff;
+            --text: #2c3e50;
         }
 
-        td {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border: none;
-            padding: 8px 5px;
-            border-bottom: 1px solid #ececec;
-            text-align: right;
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.5;
         }
 
-        td:last-child { border-bottom: none; }
-
-        td:before {
-            content: attr(data-label);
-            font-weight: bold;
-            color: var(--primary-color);
-            text-align: left;
-            padding-right: 10px;
-            font-size: 0.85rem;
-            text-transform: uppercase;
+        /* HEADER & LAYOUT */
+        header {
+            border-bottom: 4px solid var(--accent);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            text-align: center;
         }
-    }
 
-    /* Desktop Styles */
-    @media screen and (min-width: 601px) {
-        .lesson-card { padding: 40px; }
-        th, td {
-            padding: 12px;
-            border: 1px solid #eee;
+        h1 { font-size: 2.2rem; color: var(--primary); font-weight: 800; }
+        .lesson-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
         }
-        th { background-color: #f8f9fa; }
-    }
-</style>
+
+        /* TABELLEN */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th { background: #fdf2e9; padding: 15px; text-align: left; color: var(--primary); }
+        td { padding: 15px; border-bottom: 1px solid #eee; }
+
+        .arabic { font-size: 1.4rem; direction: rtl; font-family: serif; }
+
+        /* QUIZ SYSTEM */
+        #quiz-section { display: none; }
+        .progress-container {
+            width: 100%;
+            height: 10px;
+            background: #eee;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        #progress-bar {
+            width: 0%;
+            height: 100%;
+            background: var(--secondary);
+            border-radius: 5px;
+            transition: 0.4s;
+        }
+
+        .question-box { margin-bottom: 20px; }
+        .image-container { text-align: center; margin-bottom: 15px; }
+        .image-container img { width: 150px; border-radius: 15px; }
+
+        .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .opt-btn {
+            padding: 15px;
+            border: 2px solid #eee;
+            background: white;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .opt-btn:hover { border-color: var(--accent); background: #fffaf5; }
+
+        /* SIMULATED DRAG & DROP */
+        .drag-box { 
+            border: 2px dashed var(--accent); 
+            padding: 20px; 
+            text-align: center; 
+            margin-bottom: 10px;
+            border-radius: 12px;
+            min-height: 50px;
+        }
+
+        .result-screen { text-align: center; display: none; }
+        
+        footer { font-size: 0.75rem; color: #888; margin-top: 50px; padding: 20px; border-top: 1px solid #eee; }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .options-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 1.6rem; }
+        }
+    </style>
 </head>
 <body>
 
-<a href="index.html" class="back-btn">← Back to Overview</a>
+<header>
+    <h1>1. Intro to Darija 🇲🇦</h1>
+    <p>Marokkanisches Arabisch: Ein Mix aus Arabisch, Berberisch & Französisch.</p>
+</header>
 
-<div class="container">
-    <div class="lesson-card">
-        <header>
-            <h1>1. Learning Darija – Introduction to Moroccan Arabic</h1>
-            <div class="date-author">February 4, 2026 | admin</div>
-        </header>
-
-        <p>Learning <strong>Darija</strong> means understanding and speaking the everyday language of Morocco. It is used daily – on the streets, in cafés ☕, while shopping 🛒, and in professional life 💼.</p>
-
-        <h2>What is Darija?</h2>
-        <p>Darija is <strong>Moroccan Arabic</strong>. It differs from Classical Arabic and contains influences from various languages.</p>
-
-
-
-        <div class="info-box">
-            <strong>Good to know:</strong> School-taught Arabic (Fusha) will only get you so far – Darija is the real key to daily life.
-        </div>
-
-        <h2>Why Learn Darija?</h2>
-        <table>
-            <tbody>
+<div class="lesson-card">
+    <h2>Was ist Darija? 🤔</h2>
+    <p>Darija ist kein klassisches Arabisch. Es ist eine **gesprochene Sprache**. Hier sind die Big Three der Begrüßung:</p>
+    
+    <table>
+        <thead>
             <tr>
-                <td data-label="Benefit"><strong>Practicality</strong></td>
-                <td data-label="Description">Most widely spoken language.</td>
+                <th>Deutsch</th>
+                <th>Darija</th>
+                <th>Aussprache</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Hallo</td>
+                <td class="arabic">سلام</td>
+                <td>Salam</td>
             </tr>
             <tr>
-                <td data-label="Benefit"><strong>Connection</strong></td>
-                <td data-label="Description">Friendlier conversations.</td>
+                <td>Alles gut?</td>
+                <td class="arabic">لا باس؟</td>
+                <td>La bas?</td>
             </tr>
             <tr>
-                <td data-label="Benefit"><strong>Culture</strong></td>
-                <td data-label="Description">Deep cultural understanding.</td>
+                <td>Danke (Gott sei Dank)</td>
+                <td class="arabic">الحمد لله</td>
+                <td>Hamdullah</td>
             </tr>
-            </tbody>
-        </table>
-
-        <h2>Basic Darija Phrases</h2>
-        <table>
-            <tbody>
-            <tr>
-                <td data-label="English">Hello</td>
-                <td data-label="Darija">Ahlan</td>
-                <td data-label="Context">Greeting</td>
-            </tr>
-            <tr>
-                <td data-label="English">How are you?</td>
-                <td data-label="Darija">Labas?</td>
-                <td data-label="Context">Doing well?</td>
-            </tr>
-            <tr>
-                <td data-label="English">Thank you</td>
-                <td data-label="Darija">Shukran</td>
-                <td data-label="Context">Gratitude</td>
-            </tr>
-            <tr>
-                <td data-label="English">Goodbye</td>
-                <td data-label="Darija">Bslama</td>
-                <td data-label="Context">Farewell</td>
-            </tr>
-            </tbody>
-        </table>
-
-        <h2>How Can You Learn?</h2>
-        <ul class="strategy-list">
-            <li>Listening exercises & videos</li>
-            <li>Learning apps</li>
-            <li>Real conversations</li>
-            <li>AI-supported tools</li>
-        </ul>
-
-        <p style="text-align: center; margin-top: 30px;">
-            <strong>Tip:</strong> 10–15 mins daily is better than 2 hours once a week!
-        </p>
-    </div>
+        </tbody>
+    </table>
 </div>
+
+<div id="start-box" style="text-align: center;">
+    <button class="opt-btn" style="background: var(--secondary); color: white; padding: 20px 40px;" onclick="startQuiz()">Lern-Check starten 🚀</button>
+</div>
+
+<div id="quiz-section" class="lesson-card">
+    <div class="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+    
+    <div id="q-content">
+        </div>
+</div>
+
+<div id="result-screen" class="lesson-card result-screen">
+    <h2>Ergebnis 🏆</h2>
+    <p id="final-score" style="font-size: 2rem; font-weight: 800; color: var(--secondary);"></p>
+    <p id="feedback-text"></p>
+    <button class="opt-btn" onclick="location.reload()" style="margin-top: 20px;">Nochmal versuchen</button>
+</div>
+
+<footer>
+    <p><strong>Rechtlicher Hinweis:</strong> Diese Lerninhalte dienen der privaten Weiterbildung. Es wird keine Haftung für die Richtigkeit der regionalen Dialekt-Varianten übernommen. Bilder dienen illustrativen Zwecken. &copy; 2026 DarijaPro</p>
+</footer>
+
+<script>
+    const quizData = [
+        { q: "Was bedeutet 'Salam'?", o: ["Danke", "Hallo", "Tschüss", "Brot"], a: 1, type: "text" },
+        { q: "Welches Bild passt zu 'Hamdullah' (Dankbarkeit)?", o: ["🙏", "😡", "🏃", "🚗"], a: 0, type: "emoji" },
+        { q: "Ordne zu: 'La bas?' heißt...", o: ["Mir gehts schlecht", "Alles gut?", "Wie spät ist es?", "Hunger?"], a: 1, type: "text" },
+        { q: "Darija ist eine Mischsprache aus Arabisch, Berberisch und...", o: ["Deutsch", "Französisch", "Chinesisch", "Russisch"], a: 1, type: "text" },
+        { q: "Wie schreibt man 'Salam'?", o: ["سلام", "شكرا", "لا", "نعم"], a: 0, type: "arabic" },
+        { q: "Was antwortest du auf 'La bas?'", o: ["Hamdullah", "La", "Bonjour", "Salam"], a: 0, type: "text" },
+        { q: "Wahr oder Falsch: Darija wird überall in Marokko gesprochen.", o: ["Wahr", "Falsch"], a: 0, type: "text" },
+        { q: "Welches Wort ist Französisch-Einfluss?", o: ["Tobis (Bus)", "Salam", "La bas", "Smiti"], a: 0, type: "text" },
+        { q: "Drag & Drop (Simuliert): Was passt zu 'Begrüßung'?", o: ["Laufen", "Salam", "Essen", "Schlafen"], a: 1, type: "text" },
+        { q: "Wie viele Menschen sprechen Darija etwa? (Schätzung)", o: ["5 Mio", "10 Mio", "Über 30 Mio", "1 Mio"], a: 2, type: "text" }
+    ];
+
+    let currentQ = 0;
+    let score = 0;
+
+    function startQuiz() {
+        document.getElementById('start-box').style.display = 'none';
+        document.getElementById('quiz-section').style.display = 'block';
+        showQuestion();
+    }
+
+    function showQuestion() {
+        let q = quizData[currentQ];
+        let progress = (currentQ / quizData.length) * 100;
+        document.getElementById('progress-bar').style.width = progress + "%";
+
+        let html = `<span class="question">Frage ${currentQ + 1}: ${q.q}</span>`;
+        html += `<div class="options-grid">`;
+        q.o.forEach((opt, i) => {
+            html += `<button class="opt-btn" onclick="checkAnswer(${i})">${opt}</button>`;
+        });
+        html += `</div>`;
+        document.getElementById('q-content').innerHTML = html;
+    }
+
+    function checkAnswer(idx) {
+        if(idx === quizData[currentQ].a) score++;
+        
+        currentQ++;
+        if(currentQ < quizData.length) {
+            showQuestion();
+        } else {
+            showResult();
+        }
+    }
+
+    function showResult() {
+        document.getElementById('quiz-section').style.display = 'none';
+        document.getElementById('result-screen').style.display = 'block';
+        document.getElementById('final-score').innerText = `${score} / ${quizData.length}`;
+        
+        let feedback = score > 7 ? "Mabruk! Du bist ein Naturtalent! 🌟" : "Gut gemacht! Übung macht den Meister. 🇲🇦";
+        document.getElementById('feedback-text').innerText = feedback;
+    }
+</script>
 
 </body>
 </html>
