@@ -67,7 +67,22 @@
         /* KURS-INHALT */
         .content-section { padding: 60px 10%; max-width: 1200px; margin: auto; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { padding: 30px; border-radius: 15px; background: var(--sand); border-bottom: 4px solid var(--morocco-red); }
+        
+        /* ANGEPASSTE CARD ALS LINK */
+        .card { 
+            padding: 30px; 
+            border-radius: 15px; 
+            background: var(--sand); 
+            border-bottom: 4px solid var(--morocco-red); 
+            text-decoration: none; /* Entfernt Unterstreichung */
+            color: var(--dark); /* Behält Textfarbe */
+            display: block; /* Macht die ganze Fläche klickbar */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
         .card h3 { margin-bottom: 15px; color: var(--morocco-red); }
 
         /* VOCABULARY TABLE */
@@ -102,18 +117,20 @@
     <section class="content-section" id="kurs">
         <h2 style="text-align: center; font-size: 2.5rem;">Was du lernen wirst</h2>
         <div class="grid">
-            <div class="card">
+            <a href="lektion1.html" class="card">
                 <h3>Lektion 1: Die Basis</h3>
                 <p>Begrüßungen, Höflichkeit und die wichtigsten Pronomen. Der perfekte Einstieg in den Alltag.</p>
-            </div>
-            <div class="card">
+            </a>
+            
+            <a href="lektion2.html" class="card">
                 <h3>Lektion 2: Auf dem Markt</h3>
                 <p>Feilschen in den Suks von Marrakesch. Zahlen, Preise und Lebensmittel benennen.</p>
-            </div>
-            <div class="card">
+            </a>
+            
+            <a href="lektion3.html" class="card">
                 <h3>Lektion 3: Grammatik-Hacks</h3>
                 <p>Warum Darija einfacher ist als Hocharabisch. Verben konjugieren ohne Kopfschmerzen.</p>
-            </div>
+            </a>
         </div>
     </section>
 
