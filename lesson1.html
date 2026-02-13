@@ -3,274 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Darija Pro | Intro Quiz</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+    <title>Darija Intro 🇲🇦</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #c1272d;
-            --secondary: #006233;
-            --accent: #e67e22;
-            --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --text: #1e293b;
+            --morocco-red: #c1272d;
+            --morocco-green: #006233;
+            --sand: #fdfaf3;
+            --text: #2d3436;
         }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg);
+            background-color: var(--sand);
             color: var(--text);
             margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        #quiz-master-container {
-            width: 95%;
-            max-width: 500px;
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 24px;
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
-        }
-
-        /* Progress Bar */
-        .progress-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-        .progress-track {
-            flex-grow: 1;
-            height: 12px;
-            background: #e2e8f0;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        #progress-fill {
-            width: 10%;
-            height: 100%;
-            background: linear-gradient(90deg, var(--secondary), #2ecc71);
-            transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        /* Question Styles */
-        .question-title {
-            font-size: 1.4rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-
-        .option-card {
-            background: #fff;
-            border: 2px solid #e2e8f0;
-            border-radius: 16px;
-            padding: 16px;
-            margin-bottom: 12px;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            font-weight: 600;
-        }
-
-        .option-card:hover {
-            border-color: var(--accent);
-            background: #fff7ed;
-            transform: scale(1.02);
-        }
-
-        .option-card.selected {
-            border-color: var(--secondary);
-            background: #f0fdf4;
-        }
-
-        .icon-box {
-            width: 40px;
-            height: 40px;
-            background: #f1f5f9;
-            border-radius: 10px;
-            margin-right: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.2rem;
-        }
-
-        /* Footer Action */
-        .quiz-footer {
-            margin-top: 20px;
-            text-align: right;
-        }
-
-        .check-btn {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 14px 40px;
-            border-radius: 14px;
-            font-weight: 800;
-            font-size: 1rem;
-            cursor: pointer;
-            box-shadow: 0 4px 0 #8b1a1d;
-            transition: all 0.1s;
-        }
-
-        .check-btn:active {
-            transform: translateY(4px);
-            box-shadow: none;
-        }
-
-        .check-btn:disabled {
-            background: #cbd5e1;
-            box-shadow: none;
-            cursor: not-allowed;
-        }
-
-        /* Result Screen */
-        .result-view {
-            text-align: center;
-            display: none;
-        }
-
-        .score-circle {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 8px solid var(--secondary);
+            padding: 20px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            margin: 0 auto 20px;
-            font-size: 1.5rem;
-            font-weight: 800;
         }
 
-        /* Animations */
-        @keyframes shake {
-            0%, 100% {transform: translateX(0);}
-            25% {transform: translateX(-5px);}
-            75% {transform: translateX(5px);}
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: white;
+            padding: 30px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
-        .wrong-anim { animation: shake 0.3s; border-color: var(--primary) !important; }
 
+        header { text-align: center; border-bottom: 2px solid #eee; margin-bottom: 30px; padding-bottom: 20px; }
+        h1 { color: var(--morocco-red); font-weight: 800; font-size: 2rem; margin: 0; }
+        
+        .info-box { background: #f0f7f4; border-left: 5px solid var(--morocco-green); padding: 15px; margin: 20px 0; border-radius: 8px; }
+
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; border-radius: 12px; overflow: hidden; }
+        th { background: var(--morocco-red); color: white; padding: 12px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #eee; background: #fff; }
+        .arabic { font-size: 1.3rem; direction: rtl; text-align: right; }
+
+        /* QUIZ CSS */
+        #quiz-container { background: #fff; border: 2px solid #eee; padding: 25px; border-radius: 20px; margin-top: 40px; }
+        .progress-bar { height: 8px; background: #eee; border-radius: 4px; margin-bottom: 20px; overflow: hidden; }
+        #progress { height: 100%; background: var(--morocco-green); width: 0%; transition: 0.4s; }
+        .btn { 
+            display: block; width: 100%; padding: 15px; margin: 10px 0; 
+            border: 2px solid #eee; border-radius: 12px; background: white; 
+            cursor: pointer; font-weight: 600; transition: 0.3s; 
+        }
+        .btn:hover { border-color: var(--morocco-red); background: #fff5f5; }
+        .correct { background: #dff9fb !important; border-color: var(--morocco-green) !important; }
+        .wrong { background: #ffeaa7 !important; border-color: var(--morocco-red) !important; }
+
+        footer { margin-top: 40px; font-size: 0.8rem; color: #95a5a6; text-align: center; line-height: 1.4; }
     </style>
 </head>
 <body>
 
-<div id="quiz-master-container">
-    <div id="quiz-view">
-        <div class="progress-wrapper">
-            <div class="progress-track"><div id="progress-fill"></div></div>
-            <span id="q-counter" style="font-weight: 800; color: var(--gray);">1/10</span>
-        </div>
+<div class="container">
+    <header>
+        <h1>1. Intro to Darija 🇲🇦</h1>
+        <p>Marokkanisches Arabisch kurz & knackig.</p>
+    </header>
 
-        <div id="question-content">
-            <div class="question-title">Wie sagt man "Hallo" in Darija?</div>
-            <div id="options-list">
-                </div>
-        </div>
+    <div class="info-box">
+        <strong>Was ist Darija?</strong> Ein Mix aus Arabisch, Berberisch (Tamazight), Französisch & Spanisch. 🌍
+    </div>
 
-        <div class="quiz-footer">
-            <button id="next-btn" class="check-btn" onclick="handleNext()" disabled>PRÜFEN</button>
+    <h3>Key Vocab 🔑</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Deutsch</th>
+                <th>Transliteration</th>
+                <th>Arabisch</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Hallo</td>
+                <td>Salam</td>
+                <td class="arabic">سلام</td>
+            </tr>
+            <tr>
+                <td>Wie geht's?</td>
+                <td>Labas?</td>
+                <td class="arabic">لا باس؟</td>
+            </tr>
+            <tr>
+                <td>Danke</td>
+                <td>Shukran</td>
+                <td class="arabic">شكرا</td>
+            </tr>
+            <tr>
+                <td>Auf Wiedersehen</td>
+                <td>Beslama</td>
+                <td class="arabic">بسلامة</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="quiz-container">
+        <div class="progress-bar"><div id="progress"></div></div>
+        <div id="question-box">
+            <h3 id="question-text">Bist du bereit für das Quiz?</h3>
+            <div id="answer-buttons">
+                <button class="btn" onclick="startQuiz()">Start Quiz 🚀</button>
+            </div>
         </div>
     </div>
 
-    <div id="result-view" class="result-view">
-        <div class="score-circle" id="final-score">0%</div>
-        <h2 id="result-title">Bravo! 🇲🇦</h2>
-        <p id="result-desc">Du hast die ersten Schritte in Darija gemeistert.</p>
-        <button class="check-btn" onclick="location.reload()">ERNEUT STARTEN</button>
-    </div>
+    <footer>
+        <p><strong>Disclaimer:</strong> Dieser Kurs dient der allgemeinen Information. Marokkanisches Arabisch (Darija) variiert regional. Keine Haftung für die Richtigkeit der Umschrift. Inhalte sind urheberrechtlich geschützt.</p>
+        <p>&copy; 2026 Darija Masterclass | Alle Rechte vorbehalten.</p>
+    </footer>
 </div>
 
 <script>
     const questions = [
-        { q: "Was bedeutet 'Salam'?", icon: "👋", o: ["Danke", "Hallo", "Brot", "Tschüss"], a: 1 },
-        { q: "Wähle das Symbol für 'Hamdullah' (Dankbarkeit)", icon: "✨", o: ["🙏 Dankbarkeit", "😡 Wut", "🏃 Laufen", "💤 Schlafen"], a: 0 },
-        { q: "Antwort auf 'La bas?':", icon: "💬", o: ["La bas!", "Shukran", "Smiti", "Beslama"], a: 0 },
-        { q: "Darija ist ein Mix aus Arabisch, Berberisch und...", icon: "🌍", o: ["Englisch", "Spanisch", "Französisch", "Italienisch"], a: 2 },
-        { q: "Wie fragst du 'Wie heißt du?'", icon: "❓", o: ["Shnu smitek?", "Smiti...", "Kidayr?", "Labas?"], a: 0 },
-        { q: "Was bedeutet 'Mtsharfin'?", icon: "🤝", o: ["Entschuldigung", "Freut mich", "Guten Appetit", "Gute Nacht"], a: 1 },
-        { q: "Was ist 'Shwiya'?", icon: "⚖️", o: ["Viel", "Ein bisschen", "Nichts", "Teuer"], a: 1 },
-        { q: "Wie sagst du 'Ich bin...'?", icon: "👤", o: ["Enta", "Ana", "Hia", "Houma"], a: 1 },
-        { q: "Ordne zu: 'Beslama' heißt...", icon: "🚪", o: ["Willkommen", "Auf Wiedersehen", "Vielleicht", "Später"], a: 1 },
-        { q: "Ist Darija eine reine Schriftsprache?", icon: "📖", o: ["Ja", "Nein, hauptsächlich gesprochen"], a: 1 }
+        { q: "Was bedeutet 'Salam'?", a: ["Tschüss", "Hallo", "Essen"], c: 1 },
+        { q: "Darija ist ein Mix aus Arabisch, Französisch und...?", a: ["Deutsch", "Japanisch", "Berberisch"], c: 2 },
+        { q: "Wie fragst du 'Wie geht's?'", a: ["Labas?", "Beslama", "Shukran"], c: 0 },
+        { q: "Was antwortest du auf 'Shukran'?", a: ["La", "Blajmil (Gern geschehen)", "Salam"], c: 1 },
+        { q: "Wie sagst du 'Tschüss'?", a: ["Smiti", "Beslama", "Ana"], c: 1 },
+        { q: "Wird Darija in Marokko geschrieben oder primär gesprochen?", a: ["Nur geschrieben", "Primär gesprochen", "Gar nicht benutzt"], c: 1 },
+        { q: "Was bedeutet 'La'?", a: ["Ja", "Vielleicht", "Nein"], c: 2 },
+        { q: "Was bedeutet 'Iyeh'?", a: ["Ja", "Nein", "Danke"], c: 0 },
+        { q: "Was bedeutet 'Shwiya'?", a: ["Viel", "Ein bisschen", "Nichts"], c: 1 },
+        { q: "Bedeutet 'Mtsharfin' 'Freut mich'?", a: ["Ja", "Nein"], c: 0 }
     ];
 
-    let currentIdx = 0;
+    let currentQuestion = 0;
     let score = 0;
-    let selectedIdx = null;
 
-    function loadQuestion() {
-        const q = questions[currentIdx];
-        document.getElementById('q-counter').innerText = `${currentIdx + 1}/${questions.length}`;
-        document.getElementById('progress-fill').style.width = `${((currentIdx + 1) / questions.length) * 100}%`;
-        
-        const content = document.getElementById('question-content');
-        content.innerHTML = `
-            <div class="question-title">${q.q}</div>
-            <div id="options-list">
-                ${q.o.map((opt, i) => `
-                    <div class="option-card" onclick="selectOption(${i})">
-                        <div class="icon-box">${q.icon}</div>
-                        ${opt}
-                    </div>
-                `).join('')}
-            </div>
-        `;
-        document.getElementById('next-btn').disabled = true;
-        document.getElementById('next-btn').innerText = "PRÜFEN";
-        selectedIdx = null;
+    function startQuiz() {
+        currentQuestion = 0;
+        score = 0;
+        showQuestion();
     }
 
-    function selectOption(i) {
-        selectedIdx = i;
-        const cards = document.querySelectorAll('.option-card');
-        cards.forEach(c => c.classList.remove('selected'));
-        cards[i].classList.add('selected');
-        document.getElementById('next-btn').disabled = false;
+    function showQuestion() {
+        const q = questions[currentQuestion];
+        const progress = ((currentQuestion) / questions.length) * 100;
+        document.getElementById('progress').style.width = progress + "%";
+        
+        document.getElementById('question-text').innerText = q.q;
+        const buttons = document.getElementById('answer-buttons');
+        buttons.innerHTML = '';
+        
+        q.a.forEach((ans, i) => {
+            const btn = document.createElement('button');
+            btn.innerText = ans;
+            btn.className = 'btn';
+            btn.onclick = () => selectAnswer(i);
+            buttons.appendChild(btn);
+        });
     }
 
-    function handleNext() {
-        const btn = document.getElementById('next-btn');
-        const cards = document.querySelectorAll('.option-card');
+    function selectAnswer(index) {
+        const q = questions[currentQuestion];
+        if(index === q.c) {
+            score++;
+        }
         
-        if (btn.innerText === "PRÜFEN") {
-            if (selectedIdx === questions[currentIdx].a) {
-                cards[selectedIdx].style.borderColor = "var(--secondary)";
-                cards[selectedIdx].style.background = "#f0fdf4";
-                score++;
-                btn.innerText = "WEITER";
-            } else {
-                cards[selectedIdx].classList.add('wrong-anim');
-                cards[questions[currentIdx].a].style.borderColor = "var(--secondary)";
-                btn.innerText = "WEITER";
-            }
+        currentQuestion++;
+        if(currentQuestion < questions.length) {
+            showQuestion();
         } else {
-            currentIdx++;
-            if (currentIdx < questions.length) {
-                loadQuestion();
-            } else {
-                showResults();
-            }
+            showResult();
         }
     }
 
-    function showResults() {
-        document.getElementById('quiz-view').style.display = 'none';
-        const resultView = document.getElementById('result-view');
-        resultView.style.display = 'block';
-        const percent = Math.round((score / questions.length) * 100);
-        document.getElementById('final-score').innerText = percent + "%";
-        document.getElementById('result-title').innerText = percent > 70 ? "Mabruk! 🌟" : "Übung macht den Expert! 🇲🇦";
+    function showResult() {
+        document.getElementById('progress').style.width = "100%";
+        document.getElementById('question-text').innerText = `Ergebnis: ${score} von ${questions.length} Punkten!`;
+        const buttons = document.getElementById('answer-buttons');
+        buttons.innerHTML = `<button class="btn" onclick="startQuiz()">Nochmal versuchen 🔄</button>`;
     }
-
-    loadQuestion();
 </script>
 
 </body>
