@@ -1,1 +1,334 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. Sounds of Darija 🗣️</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c1272d; /* Marokko Rot */
+            --bg-color: #fdfcfb;
+            --card-bg: #ffffff;
+            --text-color: #333;
+            --table-header-bg: #fdf2e9;
+            --border-color: #f5d5c5;
+            --success: #27ae60;
+            --error: #e74c3c;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 18px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .back-btn:hover { background-color: var(--accent-color); }
+
+        .lesson-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            margin-bottom: 30px;
+        }
+
+        header {
+            border-bottom: 3px solid var(--accent-color);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+        }
+
+        h1 { color: var(--primary-color); font-size: 1.5rem; margin: 0; }
+        h2 { color: var(--accent-color); font-size: 1.2rem; margin-top: 30px; border-left: 4px solid var(--accent-color); padding-left: 10px; }
+
+        .arabic-font {
+            font-size: 1.4rem;
+            direction: rtl;
+            font-family: serif;
+            color: #2c3e50;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        th { background-color: var(--table-header-bg); font-weight: bold; }
+
+        .quiz-container {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+        }
+        .question { font-weight: bold; margin-bottom: 15px; display: block; }
+        .options { display: grid; gap: 10px; }
+        .option-btn {
+            padding: 12px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+            text-align: left;
+            font-size: 1rem;
+        }
+        .option-btn:hover { background: #f0f0f0; border-color: var(--accent-color); }
+        .correct { background: var(--success) !important; color: white; border-color: var(--success); }
+        .wrong { background: var(--error) !important; color: white; border-color: var(--error); }
+
+        .restart-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .restart-btn:hover { background-color: var(--success); }
+
+        .progress-bar {
+            height: 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        #progress-fill {
+            height: 100%;
+            background-color: var(--accent-color);
+            width: 0%;
+            transition: 0.5s;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.8rem;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        @media screen and (max-width: 600px) {
+            table, thead, tbody, th, td, tr { display: block; }
+            thead tr { position: absolute; top: -9999px; left: -9999px; }
+            tr { border: 1px solid var(--border-color); margin-bottom: 15px; border-radius: 8px; background: #fff; }
+            td { border: none; border-bottom: 1px solid #f9e6dc; position: relative; padding-left: 45%; text-align: right; min-height: 40px; }
+            td:last-child { border-bottom: none; }
+            td:before {
+                content: attr(data-label);
+                position: absolute; left: 10px; width: 40%; text-align: left;
+                font-weight: bold; color: var(--primary-color); font-size: 0.8rem; text-transform: uppercase;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<a href="index.html" class="back-btn">← Zur Übersicht</a>
+
+<div class="lesson-card">
+    <header>
+        <h1>3. Sounds of Darija – Aussprache 🗣️</h1>
+        <p style="color: #666; margin: 5px 0 0 0;">Keine Angst vor den Kehllauten – so klingen die Marokkaner!</p>
+    </header>
+
+    <h2>1. Die "Zahlen-Buchstaben" 🔢</h2>
+    <p>In SMS oder Chats nutzen Marokkaner Zahlen, um Laute darzustellen, die es im lateinischen Alphabet nicht gibt.</p>
+    
+    <table>
+        <thead>
+        <tr>
+            <th>Zahl</th>
+            <th>Laut</th>
+            <th>Wie klingt es?</th>
+            <th>Beispiel</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="Zahl"><strong>7</strong></td>
+            <td data-label="Laut">H (Ḥ)</td>
+            <td data-label="Klang">Hauchlaut (wie Fenster anhauchen)</td>
+            <td data-label="Beispiel">7it (Wand)</td>
+        </tr>
+        <tr>
+            <td data-label="Zahl"><strong>3</strong></td>
+            <td data-label="Laut">Ain (ʿ)</td>
+            <td data-label="Klang">Tief aus dem Rachen</td>
+            <td data-label="Beispiel">3lach (Warum)</td>
+        </tr>
+        <tr>
+            <td data-label="Zahl"><strong>9</strong></td>
+            <td data-label="Laut">Qaf (q)</td>
+            <td data-label="Klang">Hartes K (tief im Hals)</td>
+            <td data-label="Beispiel">9ahwa (Kaffee)</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2>2. Knifflige Konsonanten ⚡</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Umschrift</th>
+            <th>Aussprache</th>
+            <th>Emoji-Eselsbrücke</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="Umschrift"><strong>Kh</strong></td>
+            <td data-label="Aussprache">Raues 'ch' (wie 'Bach')</td>
+            <td data-label="Eselsbrücke">🥖 Khobz (Brot)</td>
+        </tr>
+        <tr>
+            <td data-label="Umschrift"><strong>Gh</strong></td>
+            <td data-label="Aussprache">Gurgelndes R (französisch)</td>
+            <td data-label="Eselsbrücke">🌅 Ghadi (Gehen)</td>
+        </tr>
+        <tr>
+            <td data-label="Umschrift"><strong>J</strong></td>
+            <td data-label="Aussprache">Weiches Sch (wie 'Journal')</td>
+            <td data-label="Eselsbrücke">✨ Jdid (Neu)</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div style="background: #e8f4fd; padding: 15px; border-radius: 8px; border-left: 5px solid var(--primary-color); margin-top: 20px;">
+        <strong>Pro-Tipp:</strong> In Darija werden Konsonanten oft verdoppelt (Shadda). Sprich sie dann länger und kräftiger aus!
+    </div>
+</div>
+
+<div class="lesson-card quiz-container">
+    <h2>Aussprache-Check 🧠</h2>
+    <div class="progress-bar"><div id="progress-fill"></div></div>
+    <div id="quiz-box">
+        <span class="question" id="quiz-question">Lädt Frage...</span>
+        <div class="options" id="quiz-options"></div>
+        <div id="quiz-footer" style="text-align: center;">
+            <p id="quiz-result" style="margin-top: 15px; font-weight: bold;"></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p><strong>Rechtlicher Hinweis & Disclaimer:</strong><br>
+    Die Lautumschrift mittels Zahlen (Arabizi) ist informell, aber im Alltag Standard. Aussprache kann regional variieren. Alle Angaben ohne Gewähr.</p>
+</footer>
+
+<script>
+    const quizData = [
+        { q: "Wofür steht die Zahl '7' in Darija?", o: ["Ein gerolltes R", "Einen Hauchlaut (H)", "Ein weiches S"], a: 1 },
+        { q: "Wie wird 'Kh' (z.B. in Khobz) ausgesprochen?", o: ["Wie 'K' in Kind", "Wie 'Ch' in Bach", "Wie 'Sch' in Schule"], a: 1 },
+        { q: "Welche Zahl ersetzt den tiefen Kehllaut 'Ain'?", o: ["9", "5", "3"], a: 2 },
+        { q: "Die Zahl '9' klingt am ehesten wie ein...", o: ["Tiefes, hartes K", "Vibrationslaut", "Stummes H"], a: 0 },
+        { q: "Was bedeutet das Wort '9ahwa'?", o: ["Tee", "Milch", "Kaffee"], a: 2 },
+        { q: "Wie spricht man das 'J' in Darija aus?", o: ["Wie 'J' in Jacke", "Wie 'J' in Journal (weich)", "Wie 'Y' in Yacht"], a: 1 },
+        { q: "Was ist 'Arabizi'?", o: ["Ein marokkanisches Gericht", "Zahlen in der Chat-Sprache", "Ein traditioneller Tanz"], a: 1 },
+        { q: "Wie klingt das 'Gh' in Darija?", o: ["Wie ein gurgelndes R", "Wie ein hartes G", "Wie ein f-Laut"], a: 0 },
+        { q: "Was ist ein Merkmal von Darija-Vokalen?", o: ["Sie werden extrem lang gezogen", "Sie sind oft sehr kurz oder fehlen", "Es gibt nur den Laut 'A'"], a: 1 },
+        { q: "Wie spricht man verdoppelte Konsonanten aus?", o: ["Gar nicht", "Kürzer", "Länger und kräftiger"], a: 2 }
+    ];
+
+    let currentQ = 0;
+    let score = 0;
+
+    function loadQuestion() {
+        const quizBox = document.getElementById('quiz-box');
+        
+        if(currentQ >= quizData.length) {
+            document.getElementById('progress-fill').style.width = "100%";
+            quizBox.innerHTML = `
+                <div style="text-align: center;">
+                    <h3>Ergebnis: ${score}/${quizData.length} 🎉</h3>
+                    <p>Du hast die Basis der Klänge gemeistert!</p>
+                    <button class="restart-btn" onclick="restartQuiz()">Quiz neu starten 🔄</button>
+                </div>`;
+            return;
+        }
+        
+        const progress = (currentQ / quizData.length) * 100;
+        document.getElementById('progress-fill').style.width = progress + "%";
+
+        quizBox.innerHTML = `
+            <span class="question" id="quiz-question"></span>
+            <div class="options" id="quiz-options"></div>
+            <div id="quiz-footer" style="text-align: center;">
+                <p id="quiz-result" style="margin-top: 15px; font-weight: bold;"></p>
+            </div>`;
+
+        const data = quizData[currentQ];
+        document.getElementById('quiz-question').innerText = `Frage ${currentQ + 1}: ${data.q}`;
+        const optionsContainer = document.getElementById('quiz-options');
+        
+        data.o.forEach((opt, index) => {
+            const btn = document.createElement('button');
+            btn.className = 'option-btn';
+            btn.innerText = opt;
+            btn.onclick = () => checkAnswer(index, btn);
+            optionsContainer.appendChild(btn);
+        });
+    }
+
+    function checkAnswer(index, btn) {
+        const correct = quizData[currentQ].a;
+        const btns = document.querySelectorAll('.option-btn');
+        btns.forEach(b => b.disabled = true);
+
+        if(index === correct) {
+            btn.classList.add('correct');
+            document.getElementById('quiz-result').innerText = "Richtig! ✅";
+            score++;
+        } else {
+            btn.classList.add('wrong');
+            btns[correct].classList.add('correct');
+            document.getElementById('quiz-result').innerText = "Leider falsch. ❌";
+        }
+
+        setTimeout(() => {
+            currentQ++;
+            loadQuestion();
+        }, 1500);
+    }
+
+    function restartQuiz() {
+        currentQ = 0;
+        score = 0;
+        loadQuestion();
+    }
+
+    loadQuestion();
+</script>
+
+</body>
+</html>
