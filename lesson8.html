@@ -1,1 +1,307 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8. Yes, No & Maybe in Darija ✅</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c1272d; /* Marokko Rot */
+            --bg-color: #fdfcfb;
+            --card-bg: #ffffff;
+            --text-color: #333;
+            --table-header-bg: #fdf2e9;
+            --border-color: #f5d5c5;
+            --success: #27ae60;
+            --error: #e74c3c;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 18px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .back-btn:hover { background-color: var(--accent-color); }
+
+        .lesson-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            margin-bottom: 30px;
+        }
+
+        header {
+            border-bottom: 3px solid var(--accent-color);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+        }
+
+        h1 { color: var(--primary-color); font-size: 1.5rem; margin: 0; }
+        h2 { color: var(--accent-color); font-size: 1.2rem; margin-top: 30px; border-left: 4px solid var(--accent-color); padding-left: 10px; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        th { background-color: var(--table-header-bg); font-weight: bold; }
+
+        .quiz-container {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+        }
+        .question { font-weight: bold; margin-bottom: 15px; display: block; }
+        .options { display: grid; gap: 10px; }
+        .option-btn {
+            padding: 12px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+            text-align: left;
+            font-size: 1rem;
+        }
+        .option-btn:hover { background: #f0f0f0; border-color: var(--accent-color); }
+        .correct { background: var(--success) !important; color: white; border-color: var(--success); }
+        .wrong { background: var(--error) !important; color: white; border-color: var(--error); }
+
+        .progress-bar {
+            height: 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        #progress-fill {
+            height: 100%;
+            background-color: var(--accent-color);
+            width: 0%;
+            transition: 0.5s;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.8rem;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        @media screen and (max-width: 600px) {
+            table, thead, tbody, th, td, tr { display: block; }
+            thead tr { position: absolute; top: -9999px; left: -9999px; }
+            tr { border: 1px solid var(--border-color); margin-bottom: 15px; border-radius: 8px; background: #fff; }
+            td { border: none; border-bottom: 1px solid #f9e6dc; position: relative; padding-left: 45%; text-align: right; min-height: 40px; }
+            td:last-child { border-bottom: none; }
+            td:before {
+                content: attr(data-label);
+                position: absolute; left: 10px; width: 40%; text-align: left;
+                font-weight: bold; color: var(--primary-color); font-size: 0.8rem; text-transform: uppercase;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<a href="index.html" class="back-btn">← Zur Übersicht</a>
+
+<div class="lesson-card">
+    <header>
+        <h1>8. Ja, Nein & Vielleicht ✅❌❓</h1>
+        <p style="color: #666; margin: 5px 0 0 0;">Die Bausteine jeder Entscheidung in Marokko.</p>
+    </header>
+
+    <h2>Die Grundlagen ✨</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Deutsch</th>
+            <th>Darija (Arabizi)</th>
+            <th>Info</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="Deutsch">Ja</td>
+            <td data-label="Darija">Iyeh / Wah</td>
+            <td data-label="Info">'Iyeh' ist überall üblich, 'Wah' eher im Norden/Osten.</td>
+        </tr>
+        <tr>
+            <td data-label="Deutsch">Nein</td>
+            <td data-label="Darija">Lla</td>
+            <td data-label="Info">Kurz und bestimmt.</td>
+        </tr>
+        <tr>
+            <td data-label="Deutsch">Okay / Gut</td>
+            <td data-label="Darija">Wakha</td>
+            <td data-label="Info">Das meistgenutzte Wort für "Einverstanden".</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2>Unsicherheit & Höflichkeit 🙏</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Deutsch</th>
+            <th>Darija (Arabizi)</th>
+            <th>Klang</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="Deutsch">Vielleicht</td>
+            <td data-label="Darija">Imken</td>
+            <td data-label="Klang">Im-ken</td>
+        </tr>
+        <tr>
+            <td data-label="Deutsch">So Gott will</td>
+            <td data-label="Darija">Incha'Allah</td>
+            <td data-label="Klang">Wird oft für "vielleicht/ja" genutzt.</td>
+        </tr>
+        <tr>
+            <td data-label="Deutsch">Nein, danke</td>
+            <td data-label="Darija">Lla, chokran</td>
+            <td data-label="Klang">Wichtig für Märkte! 🛒</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div style="background: #fff8f0; padding: 15px; border-radius: 8px; border: 1px dashed var(--accent-color); margin-top: 20px;">
+        <strong>Wakha-Power:</strong> 'Wakha' bedeutet nicht nur "Ja", sondern signalisiert, dass du verstanden hast und einverstanden bist. Es ist das "Allzweck-Okay" Marokkos!
+    </div>
+</div>
+
+<div class="lesson-card quiz-container">
+    <h2>Entscheidungs-Quiz 🧠</h2>
+    <div class="progress-bar"><div id="progress-fill"></div></div>
+    <div id="quiz-box">
+        <span class="question" id="quiz-question">Frage lädt...</span>
+        <div class="options" id="quiz-options"></div>
+        <div id="quiz-footer" style="text-align: center;">
+            <p id="quiz-result" style="margin-top: 15px; font-weight: bold;"></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p><strong>Rechtlicher Hinweis & Disclaimer:</strong><br>
+    Die Begriffe 'Iyeh' und 'Wah' sind regional unterschiedlich stark verbreitet. 'Incha'Allah' hat im kulturellen Kontext oft die Bedeutung von 'Vielleicht' oder einer Absichtserklärung. Alle Inhalte dienen Bildungszwecken ohne Gewähr.</p>
+</footer>
+
+<script>
+    const quizData = [
+        { q: "Wie sagt man standardmäßig 'Ja'?", o: ["Lla", "Iyeh", "Wakha"], a: 1 },
+        { q: "Was bedeutet 'Lla'?", o: ["Ja", "Nein", "Vielleicht"], a: 1 },
+        { q: "Welches Wort nutzt man für 'Okay / Einverstanden'?", o: ["Wakha", "Imken", "Chokran"], a: 0 },
+        { q: "Was bedeutet 'Imken'?", o: ["Sicher", "Niemals", "Vielleicht / Es ist möglich"], a: 2 },
+        { q: "Wie sagt man höflich 'Nein, danke'?", o: ["Iyeh, chokran", "Lla, chokran", "Wakha, chokran"], a: 1 },
+        { q: "In welchem Teil Marokkos hört man oft 'Wah' für Ja?", o: ["Im tiefen Süden", "Im Norden & Osten", "In Casablanca"], a: 1 },
+        { q: "Was bedeutet 'Incha'Allah' wörtlich?", o: ["Auf Wiedersehen", "So Gott will", "Guten Appetit"], a: 1 },
+        { q: "Du möchtest im Restaurant zustimmen. Was sagst du?", o: ["Lla", "Wakha", "3lach"], a: 1 },
+        { q: "Wie schreibt man 'Nein' in Arabizi?", o: ["La / Lla", "Ye", "Ma"], a: 0 },
+        { q: "Kann 'Wakha' auch eine Frage sein ('Wakha?')?", o: ["Nein, nur eine Antwort", "Ja, im Sinne von 'Okay?'", "Nur in Büchern"], a: 1 }
+    ];
+
+    let currentQ = 0;
+    let score = 0;
+
+    function loadQuestion() {
+        const quizBox = document.getElementById('quiz-box');
+        
+        if(currentQ >= quizData.length) {
+            document.getElementById('progress-fill').style.width = "100%";
+            quizBox.innerHTML = `
+                <div style="text-align: center;">
+                    <h3>Ergebnis: ${score}/${quizData.length} 🎉</h3>
+                    <p>Mabruk! Du kannst jetzt Entscheidungen auf Darija treffen.</p>
+                    <button class="restart-btn" style="padding:12px 25px; background:var(--primary-color); color:white; border:none; border-radius:8px; cursor:pointer;" onclick="restartQuiz()">Quiz neu starten 🔄</button>
+                </div>`;
+            return;
+        }
+        
+        const progress = (currentQ / quizData.length) * 100;
+        document.getElementById('progress-fill').style.width = progress + "%";
+
+        quizBox.innerHTML = `
+            <span class="question" id="quiz-question"></span>
+            <div class="options" id="quiz-options"></div>
+            <div id="quiz-footer" style="text-align: center;">
+                <p id="quiz-result" style="margin-top: 15px; font-weight: bold;"></p>
+            </div>`;
+
+        const data = quizData[currentQ];
+        document.getElementById('quiz-question').innerText = `Frage ${currentQ + 1}: ${data.q}`;
+        const optionsContainer = document.getElementById('quiz-options');
+        
+        data.o.forEach((opt, index) => {
+            const btn = document.createElement('button');
+            btn.className = 'option-btn';
+            btn.innerText = opt;
+            btn.onclick = () => checkAnswer(index, btn);
+            optionsContainer.appendChild(btn);
+        });
+    }
+
+    function checkAnswer(index, btn) {
+        const correct = quizData[currentQ].a;
+        const btns = document.querySelectorAll('.option-btn');
+        btns.forEach(b => b.disabled = true);
+
+        if(index === correct) {
+            btn.classList.add('correct');
+            document.getElementById('quiz-result').innerText = "Richtig! ✅";
+            score++;
+        } else {
+            btn.classList.add('wrong');
+            btns[correct].classList.add('correct');
+            document.getElementById('quiz-result').innerText = "Falsch. ❌";
+        }
+
+        setTimeout(() => {
+            currentQ++;
+            loadQuestion();
+        }, 1500);
+    }
+
+    function restartQuiz() {
+        currentQ = 0;
+        score = 0;
+        loadQuestion();
+    }
+
+    loadQuestion();
+</script>
+
+</body>
+</html>
