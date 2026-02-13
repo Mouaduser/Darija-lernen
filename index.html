@@ -1,1 +1,169 @@
-test
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darija Masterclass | Lerne Marokkanisch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --morocco-red: #c1272d;
+            --morocco-green: #006233;
+            --sand: #f4e4bc;
+            --dark: #1a1a1a;
+            --white: #ffffff;
+            --ad-bg: #f0f0f0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--white); color: var(--dark); line-height: 1.6; }
+
+        /* AD PLACEHOLDER STYLE */
+        .ad-container {
+            background: var(--ad-bg);
+            border: 2px dashed #ccc;
+            color: #888;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin: 20px auto;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        /* HEADER */
+        header { 
+            padding: 20px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: var(--white);
+            position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+        .logo { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: var(--morocco-red); }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&q=80&w=2070') center/cover;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .hero h1 { font-family: 'Montserrat', sans-serif; font-size: 3.5rem; margin-bottom: 15px; }
+        .btn { background: var(--morocco-green); color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: 0.3s; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+        /* KURS-INHALT */
+        .content-section { padding: 60px 10%; max-width: 1200px; margin: auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .card { padding: 30px; border-radius: 15px; background: var(--sand); border-bottom: 4px solid var(--morocco-red); }
+        .card h3 { margin-bottom: 15px; color: var(--morocco-red); }
+
+        /* VOCABULARY TABLE */
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #fff; border-radius: 10px; overflow: hidden; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+        th { background: var(--morocco-red); color: white; }
+
+        footer { background: var(--dark); color: white; padding: 40px; text-align: center; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <div class="ad-container" style="width: 90%; height: 90px; max-width: 970px;">
+        Anzeige: Premium Reiseangebote Marokko 970x90
+    </div>
+
+    <header>
+        <div class="logo">DARIJA<span>PRO</span></div>
+        <nav class="nav-links">
+            <a href="#kurs">Kursinhalte</a>
+            <a href="#vokabeln">Vokabeln</a>
+            <a href="#preise">Preise</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Sprechen wie ein Local.</h1>
+        <p style="font-size: 1.2rem; margin-bottom: 30px;">Der umfassende Online-Kurs für marokkanisches Arabisch.</p>
+        <a href="#" class="btn">Jetzt starten</a>
+    </section>
+
+    <section class="content-section" id="kurs">
+        <h2 style="text-align: center; font-size: 2.5rem;">Was du lernen wirst</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Lektion 1: Die Basis</h3>
+                <p>Begrüßungen, Höflichkeit und die wichtigsten Pronomen. Der perfekte Einstieg in den Alltag.</p>
+            </div>
+            <div class="card">
+                <h3>Lektion 2: Auf dem Markt</h3>
+                <p>Feilschen in den Suks von Marrakesch. Zahlen, Preise und Lebensmittel benennen.</p>
+            </div>
+            <div class="card">
+                <h3>Lektion 3: Grammatik-Hacks</h3>
+                <p>Warum Darija einfacher ist als Hocharabisch. Verben konjugieren ohne Kopfschmerzen.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="ad-container" style="width: 300px; height: 250px; float: right; margin: 20px;">
+        Anzeige: Sprachreisen Partner 300x250
+    </div>
+
+    <section class="content-section" id="vokabeln">
+        <h2>Erste Schritte (Vokabel-Vorschau)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Deutsch</th>
+                    <th>Darija (Transliteration)</th>
+                    <th>Arabisch</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hallo / Friede sei mit dir</td>
+                    <td>Salam u-alaikum</td>
+                    <td>السلام عليكم</td>
+                </tr>
+                <tr>
+                    <td>Wie geht es dir?</td>
+                    <td>Labas? / Ki dayr?</td>
+                    <td>لباس؟ / كي داير؟</td>
+                </tr>
+                <tr>
+                    <td>Alles gut / Danke</td>
+                    <td>Labas, Hamdullah</td>
+                    <td>لباس، الحمد لله</td>
+                </tr>
+                <tr>
+                    <td>Wie viel kostet das?</td>
+                    <td>Sh-hal hada?</td>
+                    <td>شحال هادا؟</td>
+                </tr>
+                <tr>
+                    <td>Ganz wenig / Ein bisschen</td>
+                    <td>Shwiya</td>
+                    <td>شوية</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Darija Masterclass. Besuche uns in Casablanca.</p>
+    </footer>
+
+</body>
+</html>
