@@ -1,1 +1,327 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4. Darija Writing & Script ✍️</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c1272d; /* Marokko Rot */
+            --bg-color: #fdfcfb;
+            --card-bg: #ffffff;
+            --text-color: #333;
+            --table-header-bg: #fdf2e9;
+            --border-color: #f5d5c5;
+            --success: #27ae60;
+            --error: #e74c3c;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 18px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .back-btn:hover { background-color: var(--accent-color); }
+
+        .lesson-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            margin-bottom: 30px;
+        }
+
+        header {
+            border-bottom: 3px solid var(--accent-color);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+        }
+
+        h1 { color: var(--primary-color); font-size: 1.5rem; margin: 0; }
+        h2 { color: var(--accent-color); font-size: 1.2rem; margin-top: 30px; border-left: 4px solid var(--accent-color); padding-left: 10px; }
+
+        .arabic-font {
+            font-size: 1.6rem;
+            direction: rtl;
+            font-family: 'Amiri', serif;
+            color: #2c3e50;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        th { background-color: var(--table-header-bg); font-weight: bold; }
+
+        .quiz-container {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+        }
+        .question { font-weight: bold; margin-bottom: 15px; display: block; }
+        .options { display: grid; gap: 10px; }
+        .option-btn {
+            padding: 12px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+            text-align: left;
+            font-size: 1rem;
+        }
+        .option-btn:hover { background: #f0f0f0; border-color: var(--accent-color); }
+        .correct { background: var(--success) !important; color: white; border-color: var(--success); }
+        .wrong { background: var(--error) !important; color: white; border-color: var(--error); }
+
+        .restart-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .restart-btn:hover { background-color: var(--success); }
+
+        .progress-bar {
+            height: 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        #progress-fill {
+            height: 100%;
+            background-color: var(--accent-color);
+            width: 0%;
+            transition: 0.5s;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.8rem;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        @media screen and (max-width: 600px) {
+            table, thead, tbody, th, td, tr { display: block; }
+            thead tr { position: absolute; top: -9999px; left: -9999px; }
+            tr { border: 1px solid var(--border-color); margin-bottom: 15px; border-radius: 8px; background: #fff; }
+            td { border: none; border-bottom: 1px solid #f9e6dc; position: relative; padding-left: 45%; text-align: right; min-height: 40px; }
+            td:last-child { border-bottom: none; }
+            td:before {
+                content: attr(data-label);
+                position: absolute; left: 10px; width: 40%; text-align: left;
+                font-weight: bold; color: var(--primary-color); font-size: 0.8rem; text-transform: uppercase;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<a href="index.html" class="back-btn">← Zur Übersicht</a>
+
+<div class="lesson-card">
+    <header>
+        <h1>4. Schrift & Schreibweise ✍️</h1>
+        <p style="color: #666; margin: 5px 0 0 0;">Arabische Buchstaben treffen auf moderne Tastaturen.</p>
+    </header>
+
+    <h2>1. Das arabische Alphabet 📜</h2>
+    <p>Darija wird traditionell mit arabischen Buchstaben geschrieben – von <strong>rechts nach links</strong>. Es gibt keine Großbuchstaben.</p>
+    
+    <table>
+        <thead>
+        <tr>
+            <th>Wort</th>
+            <th>Umschrift</th>
+            <th>Bedeutung</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="Wort" class="arabic-font">المغرب</td>
+            <td data-label="Umschrift">Al-Maghrib</td>
+            <td data-label="Bedeutung">Marokko 🇲🇦</td>
+        </tr>
+        <tr>
+            <td data-label="Wort" class="arabic-font">دار</td>
+            <td data-label="Umschrift">Dar</td>
+            <td data-label="Bedeutung">Haus 🏠</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2>2. "Arabizi" – Die Chat-Schrift 📱</h2>
+    <p>Da viele Handys früher keine arabische Tastatur hatten, nutzen Marokkaner lateinische Buchstaben und Zahlen.</p>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Arabisch</th>
+            <th>Arabizi (Chat)</th>
+            <th>Bedeutung</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="Arabisch" class="arabic-font">شكرا</td>
+            <td data-label="Arabizi">Chokran</td>
+            <td data-label="Bedeutung">Danke 🙏</td>
+        </tr>
+        <tr>
+            <td data-label="Arabisch" class="arabic-font">صباح الخير</td>
+            <td data-label="Arabizi">Sba7 lkhir</td>
+            <td data-label="Bedeutung">Guten Morgen ☀️</td>
+        </tr>
+        <tr>
+            <td data-label="Arabisch" class="arabic-font">علاش</td>
+            <td data-label="Arabizi">3lach</td>
+            <td data-label="Bedeutung">Warum? ❓</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div style="background: #fff8f0; padding: 15px; border-radius: 8px; border: 1px solid var(--border-color); margin-top: 20px;">
+        <strong>Wichtig:</strong> Es gibt keine offizielle Rechtschreibung für Darija. Jeder schreibt es ein bisschen anders, besonders in der Chat-Schrift!
+    </div>
+</div>
+
+<div class="lesson-card quiz-container">
+    <h2>Schreibweise-Quiz 🧠</h2>
+    <div class="progress-bar"><div id="progress-fill"></div></div>
+    <div id="quiz-box">
+        <span class="question" id="quiz-question">Lädt Frage...</span>
+        <div class="options" id="quiz-options"></div>
+        <div id="quiz-footer" style="text-align: center;">
+            <p id="quiz-result" style="margin-top: 15px; font-weight: bold;"></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p><strong>Rechtlicher Hinweis & Disclaimer:</strong><br>
+    Marokkanisches Darija ist primär eine gesprochene Sprache. Die Verwendung von lateinischen Buchstaben und Zahlen (Arabizi) ist inoffiziell, im Internet und im sozialen Leben jedoch dominierend. Für formelle Dokumente wird Hocharabisch verwendet.</p>
+</footer>
+
+<script>
+    const quizData = [
+        { q: "In welche Richtung schreibt man Arabisch?", o: ["Links nach rechts", "Oben nach unten", "Rechts nach links"], a: 2 },
+        { q: "Gibt es im arabischen Alphabet Großbuchstaben?", o: ["Ja", "Nein", "Nur am Satzanfang"], a: 1 },
+        { q: "Was bedeutet 'Arabizi'?", o: ["Ein Schreibgerät", "Schreiben mit lateinischen Buchstaben & Zahlen", "Ein klassisches Buch"], a: 1 },
+        { q: "Wie schreibt man 'Danke' oft im Chat?", o: ["Shukran / Chokran", "Merci", "Salam"], a: 0 },
+        { q: "Warum werden Zahlen wie 3, 7 oder 9 beim Schreiben genutzt?", o: ["Als Glücksbringer", "Für Laute, die es im Lateinischen nicht gibt", "Um Platz zu sparen"], a: 1 },
+        { q: "Gibt es eine offizielle Rechtschreibung für Darija?", o: ["Ja, streng geregelt", "Nein, es wird nach Gehör geschrieben", "Nur für Beamte"], a: 1 },
+        { q: "Was bedeutet 'Al-Maghrib'?", o: ["Das Haus", "Marokko", "Guten Tag"], a: 1 },
+        { q: "Wie schreibt man '3lach' auf Deutsch?", o: ["Wie?", "Wer?", "Warum?"], a: 2 },
+        { q: "Was ist 'Sba7 lkhir'?", o: ["Ein Abendessen", "Guten Morgen", "Gute Nacht"], a: 1 },
+        { q: "Welches Schriftsystem wird für offizielle Gesetze in Marokko genutzt?", o: ["Arabizi", "Nur Französisch", "Hocharabisch (Fusha)"], a: 2 }
+    ];
+
+    let currentQ = 0;
+    let score = 0;
+
+    function loadQuestion() {
+        const quizBox = document.getElementById('quiz-box');
+        
+        if(currentQ >= quizData.length) {
+            document.getElementById('progress-fill').style.width = "100%";
+            quizBox.innerHTML = `
+                <div style="text-align: center;">
+                    <h3>Ergebnis: ${score}/${quizData.length} 🎉</h3>
+                    <p>Mabruk! Du beherrscht die Grundlagen der Darija-Schrift.</p>
+                    <button class="restart-btn" onclick="restartQuiz()">Quiz neu starten 🔄</button>
+                </div>`;
+            return;
+        }
+        
+        const progress = (currentQ / quizData.length) * 100;
+        document.getElementById('progress-fill').style.width = progress + "%";
+
+        quizBox.innerHTML = `
+            <span class="question" id="quiz-question"></span>
+            <div class="options" id="quiz-options"></div>
+            <div id="quiz-footer" style="text-align: center;">
+                <p id="quiz-result" style="margin-top: 15px; font-weight: bold;"></p>
+            </div>`;
+
+        const data = quizData[currentQ];
+        document.getElementById('quiz-question').innerText = `Frage ${currentQ + 1}: ${data.q}`;
+        const optionsContainer = document.getElementById('quiz-options');
+        
+        data.o.forEach((opt, index) => {
+            const btn = document.createElement('button');
+            btn.className = 'option-btn';
+            btn.innerText = opt;
+            btn.onclick = () => checkAnswer(index, btn);
+            optionsContainer.appendChild(btn);
+        });
+    }
+
+    function checkAnswer(index, btn) {
+        const correct = quizData[currentQ].a;
+        const btns = document.querySelectorAll('.option-btn');
+        btns.forEach(b => b.disabled = true);
+
+        if(index === correct) {
+            btn.classList.add('correct');
+            document.getElementById('quiz-result').innerText = "Richtig! ✅";
+            score++;
+        } else {
+            btn.classList.add('wrong');
+            btns[correct].classList.add('correct');
+            document.getElementById('quiz-result').innerText = "Leider falsch. ❌";
+        }
+
+        setTimeout(() => {
+            currentQ++;
+            loadQuestion();
+        }, 1500);
+    }
+
+    function restartQuiz() {
+        currentQ = 0;
+        score = 0;
+        loadQuestion();
+    }
+
+    loadQuestion();
+</script>
+
+</body>
+</html>
