@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7. Namen & Vorstellen 🇲🇦</title>
+    <title>1. Intro to Darija 🇲🇦</title>
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -103,6 +103,20 @@
         .correct { background: var(--success) !important; color: white; border-color: var(--success); }
         .wrong { background: var(--error) !important; color: white; border-color: var(--error); }
 
+        .progress-bar {
+            height: 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        #progress-fill {
+            height: 100%;
+            background-color: var(--accent-color);
+            width: 0%;
+            transition: 0.5s;
+        }
+
         footer {
             margin-top: 50px;
             font-size: 0.8rem;
@@ -131,13 +145,14 @@
 
 <div class="lesson-card">
     <header>
-        <h1>7. Namen & Vorstellen 🇲🇦</h1>
-        <p style="color: #666; margin: 5px 0 0 0;">Wie du dich nennst und andere nach ihrem Namen fragst.</p>
+        <h1>1. Intro to Darija 🇲🇦</h1>
+        <p style="color: #666; margin: 5px 0 0 0;">Willkommen in der Welt des marokkanischen Arabisch.</p>
     </header>
 
-    <h2>1. Deinen Namen nennen 👤</h2>
-    <p>In Darija nutzt du meistens das Wort <strong>Smiti</strong> (Mein Name).</p>
+    <h2>Was ist Darija? 🤔</h2>
+    <p>Darija ist kein klassisches Arabisch. Es ist eine lebendige Mischsprache aus Arabisch, Tamazight (Berberisch), Französisch und Spanisch.</p>
 
+    <h2>Die Big Three der Begrüßung 🤝</h2>
     <table>
         <thead>
         <tr>
@@ -148,21 +163,24 @@
         </thead>
         <tbody>
         <tr>
-            <td data-label="Deutsch">Mein Name ist...</td>
-            <td data-label="Umschrift">Smiti...</td>
-            <td data-label="Arabisch" class="arabic-font">سميتي...</td>
+            <td data-label="Deutsch">Hallo / Friede</td>
+            <td data-label="Umschrift">Salam</td>
+            <td data-label="Arabisch" class="arabic-font">سلام</td>
         </tr>
         <tr>
-            <td data-label="Deutsch">Ich bin [Name]</td>
-            <td data-label="Umschrift">Ana [Name]</td>
-            <td data-label="Arabisch" class="arabic-font">أنا...</td>
+            <td data-label="Deutsch">Wie geht's?</td>
+            <td data-label="Umschrift">Labas?</td>
+            <td data-label="Arabisch" class="arabic-font">لا باس؟</td>
+        </tr>
+        <tr>
+            <td data-label="Deutsch">Danke (Gott sei Dank)</td>
+            <td data-label="Umschrift">Hamdullah</td>
+            <td data-label="Arabisch" class="arabic-font">الحمد لله</td>
         </tr>
         </tbody>
     </table>
 
-    <h2>2. Nach dem Namen fragen ❓</h2>
-    <p>Egal ob Mann oder Frau, die Frage bleibt meist gleich:</p>
-
+    <h2>Wichtige Partikel 💡</h2>
     <table>
         <thead>
         <tr>
@@ -173,36 +191,27 @@
         </thead>
         <tbody>
         <tr>
-            <td data-label="Deutsch">Wie heißt du?</td>
-            <td data-label="Umschrift">Shnu smitek?</td>
-            <td data-label="Arabisch" class="arabic-font">شنو سميتك؟</td>
+            <td data-label="Deutsch">Ja</td>
+            <td data-label="Umschrift">Iyeh / Wah</td>
+            <td data-label="Arabisch" class="arabic-font">إييه / واه</td>
         </tr>
-        </tbody>
-    </table>
-
-    <h2>3. Höflichkeit 🤝</h2>
-    <p>Nach dem Vorstellen sagt man "Freut mich" (Wörtlich: Wir sind geehrt).</p>
-
-    <table>
-        <thead>
         <tr>
-            <th>Deutsch</th>
-            <th>Umschrift</th>
-            <th>Arabisch</th>
+            <td data-label="Deutsch">Nein</td>
+            <td data-label="Umschrift">La</td>
+            <td data-label="Arabisch" class="arabic-font">لا</td>
         </tr>
-        </thead>
-        <tbody>
         <tr>
-            <td data-label="Deutsch">Sehr erfreut</td>
-            <td data-label="Umschrift">Mtsharfin</td>
-            <td data-label="Arabisch" class="arabic-font">متشرفين</td>
+            <td data-label="Deutsch">Okay / Gut</td>
+            <td data-label="Umschrift">Wakha</td>
+            <td data-label="Arabisch" class="arabic-font">واخا</td>
         </tr>
         </tbody>
     </table>
 </div>
 
 <div class="lesson-card quiz-container">
-    <h2>Schnell-Quiz 🧠</h2>
+    <h2>Einstiegs-Quiz 🧠</h2>
+    <div class="progress-bar"><div id="progress-fill"></div></div>
     <div id="quiz-box">
         <span class="question" id="quiz-question">Lädt Frage...</span>
         <div class="options" id="quiz-options"></div>
@@ -212,29 +221,41 @@
 
 <footer>
     <p><strong>Rechtlicher Hinweis & Disclaimer:</strong><br>
-    Die bereitgestellten Inhalte dienen ausschließlich der allgemeinen Information und dem privaten Erlernen der Sprache. Trotz sorgfältiger Prüfung übernehmen wir keine Haftung für die Richtigkeit, Vollständigkeit oder Aktualität der Übersetzungen und grammatikalischen Regeln. Sprachgebräuche in Marokko können regional stark variieren. Die Nutzung erfolgt auf eigenes Risiko.</p>
+    Die bereitgestellten Inhalte dienen ausschließlich Bildungszwecken. Marokkanisches Darija variiert regional stark. Keine Haftung für die Richtigkeit der Umschrift oder grammatikalischen Regeln.</p>
 </footer>
 
 <script>
     const quizData = [
-        { q: "Wie sagst du 'Mein Name ist'?", o: ["Ana smitek", "Smiti", "Mtsharfin"], a: 1 },
-        { q: "Was bedeutet 'Shnu smitek?'", o: ["Wie geht es dir?", "Woher kommst du?", "Wie heißt du?"], a: 2 },
-        { q: "Was sagt man, nachdem man den Namen erfahren hat?", o: ["Labas", "Mtsharfin", "Smiti"], a: 1 },
-        { q: "Was bedeutet das Wort 'Ana'?", o: ["Ich", "Du", "Er"], a: 0 },
-        { q: "Wie schreibt man 'Smiti' auf Arabisch?", o: ["سميتك", "أنا", "سميتي"], a: 2 }
+        { q: "Was ist Darija?", o: ["Klassisches Hocharabisch", "Eine Mischsprache", "Ein französischer Dialekt"], a: 1 },
+        { q: "Wie sagt man 'Hallo'?", o: ["Labas", "Salam", "Shukran"], a: 1 },
+        { q: "Was bedeutet 'Labas'?", o: ["Wie geht's?", "Guten Hunger", "Gute Nacht"], a: 0 },
+        { q: "Wie antwortet man oft auf 'Labas'?", o: ["La", "Iyeh", "Hamdullah"], a: 2 },
+        { q: "Welche Sprache beeinflusste Darija?", o: ["Japanisch", "Französisch", "Russisch"], a: 1 },
+        { q: "Was bedeutet 'La'?", o: ["Ja", "Vielleicht", "Nein"], a: 2 },
+        { q: "Wie sagt man 'Ja'?", o: ["Iyeh", "La", "Wakha"], a: 0 },
+        { q: "Was bedeutet 'Wakha'?", o: ["Nein danke", "Okay / Einverstanden", "Wo?"], a: 1 },
+        { q: "Ist Darija eine reine Schriftsprache?", o: ["Ja", "Nein, hauptsächlich gesprochen"], a: 1 },
+        { q: "Wie schreibt man 'Salam'?", o: ["شكرا", "سلام", "لا باس"], a: 1 }
     ];
 
     let currentQ = 0;
+    let score = 0;
 
     function loadQuestion() {
         if(currentQ >= quizData.length) {
-            document.getElementById('quiz-box').innerHTML = "<h3>Ausgezeichnet! 🎉</h3><p>Du hast alle Fragen beantwortet.</p>";
+            document.getElementById('quiz-box').innerHTML = `<h3>Ergebnis: ${score}/${quizData.length} 🎉</h3><p>Mabruk! Du hast das Intro abgeschlossen.</p>`;
             return;
         }
+        
+        // Update Progress Bar
+        const progress = (currentQ / quizData.length) * 100;
+        document.getElementById('progress-fill').style.width = progress + "%";
+
         const data = quizData[currentQ];
         document.getElementById('quiz-question').innerText = `Frage ${currentQ + 1}: ${data.q}`;
         const optionsContainer = document.getElementById('quiz-options');
         optionsContainer.innerHTML = "";
+        
         data.o.forEach((opt, index) => {
             const btn = document.createElement('button');
             btn.className = 'option-btn';
@@ -252,6 +273,7 @@
         if(index === correct) {
             btn.classList.add('correct');
             document.getElementById('quiz-result').innerText = "Richtig! ✅";
+            score++;
         } else {
             btn.classList.add('wrong');
             btns[correct].classList.add('correct');
