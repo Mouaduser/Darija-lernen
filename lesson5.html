@@ -1,1 +1,326 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5. Transliteration Rules 📖</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c1272d; /* Marokko Rot */
+            --bg-color: #fdfcfb;
+            --card-bg: #ffffff;
+            --text-color: #333;
+            --table-header-bg: #fdf2e9;
+            --border-color: #f5d5c5;
+            --success: #27ae60;
+            --error: #e74c3c;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 18px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .back-btn:hover { background-color: var(--accent-color); }
+
+        .lesson-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            margin-bottom: 30px;
+        }
+
+        header {
+            border-bottom: 3px solid var(--accent-color);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+        }
+
+        h1 { color: var(--primary-color); font-size: 1.5rem; margin: 0; }
+        h2 { color: var(--accent-color); font-size: 1.2rem; margin-top: 30px; border-left: 4px solid var(--accent-color); padding-left: 10px; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        th { background-color: var(--table-header-bg); font-weight: bold; }
+
+        /* Quiz Styling */
+        .quiz-container {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+        }
+        .question { font-weight: bold; margin-bottom: 15px; display: block; }
+        .options { display: grid; gap: 10px; }
+        .option-btn {
+            padding: 12px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+            text-align: left;
+            font-size: 1rem;
+        }
+        .option-btn:hover { background: #f0f0f0; border-color: var(--accent-color); }
+        .correct { background: var(--success) !important; color: white; border-color: var(--success); }
+        .wrong { background: var(--error) !important; color: white; border-color: var(--error); }
+
+        .progress-bar {
+            height: 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        #progress-fill {
+            height: 100%;
+            background-color: var(--accent-color);
+            width: 0%;
+            transition: 0.5s;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.8rem;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        @media screen and (max-width: 600px) {
+            table, thead, tbody, th, td, tr { display: block; }
+            thead tr { position: absolute; top: -9999px; left: -9999px; }
+            tr { border: 1px solid var(--border-color); margin-bottom: 15px; border-radius: 8px; background: #fff; }
+            td { border: none; border-bottom: 1px solid #f9e6dc; position: relative; padding-left: 45%; text-align: right; min-height: 40px; }
+            td:last-child { border-bottom: none; }
+            td:before {
+                content: attr(data-label);
+                position: absolute; left: 10px; width: 40%; text-align: left;
+                font-weight: bold; color: var(--primary-color); font-size: 0.8rem; text-transform: uppercase;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<a href="index.html" class="back-btn">← Zur Übersicht</a>
+
+<div class="lesson-card">
+    <header>
+        <h1>5. Transliteration Rules 📖</h1>
+        <p style="color: #666; margin: 5px 0 0 0;">Wie man Darija liest und schreibt, ohne arabische Buchstaben zu nutzen.</p>
+    </header>
+
+    <h2>1. Die Logik der Zahlen 🔢</h2>
+    <p>Zahlen werden genutzt, weil sie optisch den arabischen Buchstaben ähneln, für die es kein lateinisches Pendant gibt.</p>
+    
+    <table>
+        <thead>
+        <tr>
+            <th>Zahl</th>
+            <th>Arabisch</th>
+            <th>Name</th>
+            <th>Beispiel</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="Zahl"><strong>2</strong></td>
+            <td data-label="Arabisch">ء</td>
+            <td data-label="Name">Hamza (Stopp)</td>
+            <td data-label="Beispiel">2ana (Ich)</td>
+        </tr>
+        <tr>
+            <td data-label="Zahl"><strong>3</strong></td>
+            <td data-label="Arabisch">ع</td>
+            <td data-label="Name">Ain</td>
+            <td data-label="Beispiel">3id (Fest)</td>
+        </tr>
+        <tr>
+            <td data-label="Zahl"><strong>5</strong></td>
+            <td data-label="Arabisch">خ</td>
+            <td data-label="Name">Kha (Rau)</td>
+            <td data-label="Beispiel">5obz (Brot)</td>
+        </tr>
+        <tr>
+            <td data-label="Zahl"><strong>7</strong></td>
+            <td data-label="Arabisch">ح</td>
+            <td data-label="Name">7a (Hauch)</td>
+            <td data-label="Beispiel">7lib (Milch)</td>
+        </tr>
+        <tr>
+            <td data-label="Zahl"><strong>8</strong></td>
+            <td data-label="Arabisch">ق</td>
+            <td data-label="Name">Qaf (Variante)</td>
+            <td data-label="Beispiel">8al (Sagen)</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2>2. Wichtige Buchstaben-Kombis 🔠</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Kombi</th>
+            <th>Klang</th>
+            <th>Beispiel</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="Kombi"><strong>CH / SH</strong></td>
+            <td data-label="Klang">Deutsch 'Sch'</td>
+            <td data-label="Beispiel">Chokran (Danke)</td>
+        </tr>
+        <tr>
+            <td data-label="Kombi"><strong>GH</strong></td>
+            <td data-label="Klang">Französisch 'R'</td>
+            <td data-label="Beispiel">Ghalia (Teuer)</td>
+        </tr>
+        <tr>
+            <td data-label="Kombi"><strong>KH</strong></td>
+            <td data-label="Klang">Deutsch 'Bach'</td>
+            <td data-label="Beispiel">Khoya (Bruder)</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div style="background: #f0f7ff; padding: 15px; border-radius: 8px; border-left: 5px solid var(--primary-color); margin-top: 20px;">
+        <strong>Tipp:</strong> Manche nutzen '5' für 'KH' und andere schreiben einfach 'KH'. Beides ist in Darija-Chats völlig korrekt! 📱
+    </div>
+</div>
+
+<div class="lesson-card quiz-container">
+    <h2>Transliterations-Quiz 🧠</h2>
+    <div class="progress-bar"><div id="progress-fill"></div></div>
+    <div id="quiz-box">
+        <span class="question" id="quiz-question">Lädt Frage...</span>
+        <div class="options" id="quiz-options"></div>
+        <div id="quiz-footer" style="text-align: center;">
+            <p id="quiz-result" style="margin-top: 15px; font-weight: bold;"></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p><strong>Rechtlicher Hinweis & Disclaimer:</strong><br>
+    Die Transliteration (Arabizi) ist ein informelles System. Es gibt keinen offiziellen Standard; Schreibweisen können zwischen Marokko-Nord und Marokko-Süd variieren. Diese Lektion dient ausschließlich Bildungszwecken.</p>
+</footer>
+
+<script>
+    const quizData = [
+        { q: "Wofür steht die Zahl '3'?", o: ["Ein stummes H", "Den Laut 'Ain'", "Ein rollendes R"], a: 1 },
+        { q: "Welche Zahl wird oft für den rauen 'KH'-Laut (wie in Brot) genutzt?", o: ["5", "2", "4"], a: 0 },
+        { q: "Wie schreibt man 'Danke' in Transliteration?", o: ["Sokran", "Chokran", "7okran"], a: 1 },
+        { q: "Was bedeutet die Zahl '2' am Wortanfang (z.B. 2ana)?", o: ["Ein kurzes Pausieren/Stopp", "Ein langes A", "Ein weiches B"], a: 0 },
+        { q: "Die Zahl '7' klingt wie...", o: ["Ein hartes K", "Fenster anhauchen (Hauchlaut)", "Ein gurgelndes G"], a: 1 },
+        { q: "Welche Kombination klingt wie das französische 'R'?", o: ["KH", "CH", "GH"], a: 2 },
+        { q: "Was bedeutet '5obz'?", o: ["Wasser", "Brot", "Zucker"], a: 1 },
+        { q: "Warum nutzen Lerner Transliteration?", o: ["Weil Arabisch verboten ist", "Um Darija ohne arabische Schrift zu lernen", "Um schneller zu tippen"], a: 1 },
+        { q: "Wie wird 'CH' in Darija ausgesprochen?", o: ["Wie 'Ich'", "Wie 'Schuh'", "Wie 'Tschüss'"], a: 1 },
+        { q: "Ist die Zahl '8' ein Standard für alle?", o: ["Ja, immer", "Nein, oft wird stattdessen '9' oder 'q' genutzt", "Nur in der Schule"], a: 1 }
+    ];
+
+    let currentQ = 0;
+    let score = 0;
+
+    function loadQuestion() {
+        const quizBox = document.getElementById('quiz-box');
+        
+        if(currentQ >= quizData.length) {
+            document.getElementById('progress-fill').style.width = "100%";
+            quizBox.innerHTML = `
+                <div style="text-align: center;">
+                    <h3>Ergebnis: ${score}/${quizData.length} 🎉</h3>
+                    <p>Du kannst nun Darija-Chats wie ein Profi lesen!</p>
+                    <button class="restart-btn" style="padding:10px 20px; background:var(--primary-color); color:white; border:none; border-radius:8px; cursor:pointer;" onclick="restartQuiz()">Quiz neu starten 🔄</button>
+                </div>`;
+            return;
+        }
+        
+        const progress = (currentQ / quizData.length) * 100;
+        document.getElementById('progress-fill').style.width = progress + "%";
+
+        quizBox.innerHTML = `
+            <span class="question" id="quiz-question"></span>
+            <div class="options" id="quiz-options"></div>
+            <div id="quiz-footer" style="text-align: center;">
+                <p id="quiz-result" style="margin-top: 15px; font-weight: bold;"></p>
+            </div>`;
+
+        const data = quizData[currentQ];
+        document.getElementById('quiz-question').innerText = `Frage ${currentQ + 1}: ${data.q}`;
+        const optionsContainer = document.getElementById('quiz-options');
+        
+        data.o.forEach((opt, index) => {
+            const btn = document.createElement('button');
+            btn.className = 'option-btn';
+            btn.innerText = opt;
+            btn.onclick = () => checkAnswer(index, btn);
+            optionsContainer.appendChild(btn);
+        });
+    }
+
+    function checkAnswer(index, btn) {
+        const correct = quizData[currentQ].a;
+        const btns = document.querySelectorAll('.option-btn');
+        btns.forEach(b => b.disabled = true);
+
+        if(index === correct) {
+            btn.classList.add('correct');
+            document.getElementById('quiz-result').innerText = "Richtig! ✅";
+            score++;
+        } else {
+            btn.classList.add('wrong');
+            btns[correct].classList.add('correct');
+            document.getElementById('quiz-result').innerText = "Falsch. ❌";
+        }
+
+        setTimeout(() => {
+            currentQ++;
+            loadQuestion();
+        }, 1500);
+    }
+
+    function restartQuiz() {
+        currentQ = 0;
+        score = 0;
+        loadQuestion();
+    }
+
+    loadQuestion();
+</script>
+
+</body>
+</html>
