@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Darija – Introduction to Moroccan Arabic</title>
+    <style>
+    :root {
+        --primary-color: #2c3e50;
+        --secondary-color: #2980b9;
+        --accent-color: #f39c12;
+        --bg-color: #f0f2f5;
+        --card-bg: #ffffff;
+        --text-color: #333;
+    }
+    body {
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        line-height: 1.6;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        margin: 0;
+        padding: 0;
+    }
+
+    .back-btn {
+        display: inline-block;
+        margin: 15px;
+        padding: 12px 20px;
+        background-color: var(--primary-color);
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 0.9rem;
+        transition: transform 0.2s, background 0.3s;
+    }
+    .back-btn:active { transform: scale(0.95); }
+
+    .container {
+        width: 95%;
+        max-width: 800px;
+        margin: 0 auto 40px auto;
+    }
+
+    .lesson-card {
+        background: var(--card-bg);
+        padding: 20px 15px;
+        border-radius: 16px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    header {
+        border-bottom: 3px solid var(--secondary-color);
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+    h1 {
+        color: var(--primary-color);
+        font-size: 1.4rem;
+        margin: 0 0 10px 0;
+        line-height: 1.2;
+    }
+    .date-author {
+        color: #888;
+        font-size: 0.8rem;
+    }
+
+    h2 {
+        color: var(--secondary-color);
+        margin-top: 30px;
+        border-left: 5px solid var(--accent-color);
+        padding-left: 12px;
+        font-size: 1.15rem;
+    }
+
+    .info-box {
+        background-color: #e8f4fd;
+        border-left: 5px solid var(--secondary-color);
+        padding: 15px;
+        margin: 20px 0;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+        font-size: 0.95rem;
+    }
+
+    .strategy-list { list-style-type: none; padding: 0; }
+    .strategy-list li {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: flex-start;
+    }
+    .strategy-list li:before { content: "✅"; margin-right: 10px; }
+
+    /* --- Responsive Table Fix --- */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+    }
+
+    @media screen and (max-width: 600px) {
+        table, thead, tbody, th, td, tr {
+            display: block;
+        }
+        thead { display: none; } /* Kopfzeile verstecken */
+
+        tr {
+            background: #f8f9fa;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+
+        td {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: none;
+            padding: 8px 5px;
+            border-bottom: 1px solid #ececec;
+            text-align: right;
+        }
+
+        td:last-child { border-bottom: none; }
+
+        td:before {
+            content: attr(data-label);
+            font-weight: bold;
+            color: var(--primary-color);
+            text-align: left;
+            padding-right: 10px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+    }
+
+    /* Desktop Styles */
+    @media screen and (min-width: 601px) {
+        .lesson-card { padding: 40px; }
+        th, td {
+            padding: 12px;
+            border: 1px solid #eee;
+        }
+        th { background-color: #f8f9fa; }
+    }
+</style>
+</head>
+<body>
+
+<a href="index.html" class="back-btn">← Back to Overview</a>
+
+<div class="container">
+    <div class="lesson-card">
+        <header>
+            <h1>1. Learning Darija – Introduction to Moroccan Arabic</h1>
+            <div class="date-author">February 4, 2026 | admin</div>
+        </header>
+
+        <p>Learning <strong>Darija</strong> means understanding and speaking the everyday language of Morocco. It is used daily – on the streets, in cafés ☕, while shopping 🛒, and in professional life 💼.</p>
+
+        <h2>What is Darija?</h2>
+        <p>Darija is <strong>Moroccan Arabic</strong>. It differs from Classical Arabic and contains influences from various languages.</p>
+
+
+
+        <div class="info-box">
+            <strong>Good to know:</strong> School-taught Arabic (Fusha) will only get you so far – Darija is the real key to daily life.
+        </div>
+
+        <h2>Why Learn Darija?</h2>
+        <table>
+            <tbody>
+            <tr>
+                <td data-label="Benefit"><strong>Practicality</strong></td>
+                <td data-label="Description">Most widely spoken language.</td>
+            </tr>
+            <tr>
+                <td data-label="Benefit"><strong>Connection</strong></td>
+                <td data-label="Description">Friendlier conversations.</td>
+            </tr>
+            <tr>
+                <td data-label="Benefit"><strong>Culture</strong></td>
+                <td data-label="Description">Deep cultural understanding.</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h2>Basic Darija Phrases</h2>
+        <table>
+            <tbody>
+            <tr>
+                <td data-label="English">Hello</td>
+                <td data-label="Darija">Ahlan</td>
+                <td data-label="Context">Greeting</td>
+            </tr>
+            <tr>
+                <td data-label="English">How are you?</td>
+                <td data-label="Darija">Labas?</td>
+                <td data-label="Context">Doing well?</td>
+            </tr>
+            <tr>
+                <td data-label="English">Thank you</td>
+                <td data-label="Darija">Shukran</td>
+                <td data-label="Context">Gratitude</td>
+            </tr>
+            <tr>
+                <td data-label="English">Goodbye</td>
+                <td data-label="Darija">Bslama</td>
+                <td data-label="Context">Farewell</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h2>How Can You Learn?</h2>
+        <ul class="strategy-list">
+            <li>Listening exercises & videos</li>
+            <li>Learning apps</li>
+            <li>Real conversations</li>
+            <li>AI-supported tools</li>
+        </ul>
+
+        <p style="text-align: center; margin-top: 30px;">
+            <strong>Tip:</strong> 10–15 mins daily is better than 2 hours once a week!
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
