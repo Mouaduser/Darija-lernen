@@ -1,1 +1,309 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9. How Are You? – Der marokkanische Weg 🤔</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c1272d;
+            --bg-color: #fdfcfb;
+            --card-bg: #ffffff;
+            --text-color: #333;
+            --table-header-bg: #fdf2e9;
+            --border-color: #f5d5c5;
+            --success: #27ae60;
+            --error: #e74c3c;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 18px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .back-btn:hover { background-color: var(--accent-color); }
+
+        .lesson-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            margin-bottom: 30px;
+        }
+
+        header {
+            border-bottom: 3px solid var(--accent-color);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+        }
+
+        h1 { color: var(--primary-color); font-size: 1.5rem; margin: 0; }
+        h2 { color: var(--accent-color); font-size: 1.2rem; margin-top: 30px; border-left: 4px solid var(--accent-color); padding-left: 10px; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        th { background-color: var(--table-header-bg); font-weight: bold; }
+
+        .quiz-container {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+        }
+        .question { font-weight: bold; margin-bottom: 15px; display: block; }
+        .options { display: grid; gap: 10px; }
+        .option-btn {
+            padding: 12px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+            text-align: left;
+            font-size: 1rem;
+        }
+        .option-btn:hover { background: #f0f0f0; border-color: var(--accent-color); }
+        .correct { background: var(--success) !important; color: white; border-color: var(--success); }
+        .wrong { background: var(--error) !important; color: white; border-color: var(--error); }
+
+        .progress-bar {
+            height: 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        #progress-fill {
+            height: 100%;
+            background-color: var(--accent-color);
+            width: 0%;
+            transition: 0.5s;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.8rem;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        @media screen and (max-width: 600px) {
+            table, thead, tbody, th, td, tr { display: block; }
+            thead tr { position: absolute; top: -9999px; left: -9999px; }
+            tr { border: 1px solid var(--border-color); margin-bottom: 15px; border-radius: 8px; background: #fff; }
+            td { border: none; border-bottom: 1px solid #f9e6dc; position: relative; padding-left: 45%; text-align: right; min-height: 40px; }
+            td:last-child { border-bottom: none; }
+            td:before {
+                content: attr(data-label);
+                position: absolute; left: 10px; width: 40%; text-align: left;
+                font-weight: bold; color: var(--primary-color); font-size: 0.8rem; text-transform: uppercase;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<a href="index.html" class="back-btn">← Zur Übersicht</a>
+
+<div class="lesson-card">
+    <header>
+        <h1>9. Wie geht's? – Marokkanisch 🤔</h1>
+        <p style="color: #666; margin: 5px 0 0 0;">Vergiss "How are you" – lerne die echten Formeln.</p>
+    </header>
+
+    <h2>1. Die Grundfragen 🎙️</h2>
+    <p>In Marokko fragst du nicht nur einmal. Es ist ein Fluss aus Höflichkeit.</p>
+    
+    <table>
+        <thead>
+        <tr>
+            <th>Deutsch</th>
+            <th>Darija (Arabizi)</th>
+            <th>Info</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="Deutsch">Wie geht's dir?</td>
+            <td data-label="Darija">Kif dayr (m) / dayra (f)?</td>
+            <td data-label="Info">Wörtlich: "Wie bist du gemacht?"</td>
+        </tr>
+        <tr>
+            <td data-label="Deutsch">Geht's dir gut?</td>
+            <td data-label="Darija">Labas 3lik?</td>
+            <td data-label="Info">Die häufigste Kurzform.</td>
+        </tr>
+        <tr>
+            <td data-label="Deutsch">Alles bestens?</td>
+            <td data-label="Darija">Kulchi mzyan?</td>
+            <td data-label="Info">Kombinierbar mit fast allem.</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2>2. Die Antworten (Immer positiv!) ✨</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Deutsch</th>
+            <th>Darija (Arabizi)</th>
+            <th>Bedeutung</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="Deutsch">Mir geht's gut.</td>
+            <td data-label="Darija">Labas, l7amdullah</td>
+            <td data-label="Bedeutung">Gut, Gott sei Dank.</td>
+        </tr>
+        <tr>
+            <td data-label="Deutsch">Alles bestens.</td>
+            <td data-label="Darija">Kulchi bikhir</td>
+            <td data-label="Bedeutung">Alles im grünen Bereich.</td>
+        </tr>
+        <tr>
+            <td data-label="Deutsch">Und dir?</td>
+            <td data-label="Darija">W enta (m) / entia (f)?</td>
+            <td data-label="Bedeutung">Gegenfrage.</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div style="background: #e8f4fd; padding: 15px; border-radius: 8px; border-left: 5px solid var(--primary-color); margin-top: 20px;">
+        <strong>Pro-Tipp:</strong> Auch wenn es dir schlecht geht, antwortet man in Marokko meist zuerst mit "Labas, l7amdullah". Es ist eine soziale Etikette.
+    </div>
+</div>
+
+<div class="lesson-card quiz-container">
+    <h2>Befinden-Quiz 🧠</h2>
+    <div class="progress-bar"><div id="progress-fill"></div></div>
+    <div id="quiz-box">
+        <span class="question" id="quiz-question">Lädt Frage...</span>
+        <div class="options" id="quiz-options"></div>
+        <div id="quiz-footer" style="text-align: center;">
+            <p id="quiz-result" style="margin-top: 15px; font-weight: bold;"></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p><strong>Rechtlicher Hinweis & Disclaimer:</strong><br>
+    Dialektale Unterschiede zwischen Städten (z.B. Tanger vs. Marrakesch) existieren. Arabizi ist eine informelle Umschrift. Nutzung auf eigene Gefahr im sozialen Kontext. 😉</p>
+</footer>
+
+<script>
+    const quizData = [
+        { q: "Wie fragt man einen Mann 'Wie geht es dir?'", o: ["Kif dayr?", "Kif dayra?", "Labas 3likia?"], a: 0 },
+        { q: "Was bedeutet 'Kulchi mzyan'?", o: ["Alles schlecht", "Alles gut / bestens", "Guten Morgen"], a: 1 },
+        { q: "Was ist die Standard-Antwort auf fast jede Frage nach dem Befinden?", o: ["Chokran", "Labas, l7amdullah", "Wakha"], a: 1 },
+        { q: "Wie fragt man eine Frau 'Und dir?'", o: ["W enta?", "W entia?", "W labas?"], a: 1 },
+        { q: "Was bedeutet 'Kif dayra'?", o: ["Wie geht es ihr?", "Wie geht es dir (weiblich)?", "Was machst du?"], a: 1 },
+        { q: "Was bedeutet '3lik' in 'Labas 3lik'?", o: ["Auf dich / dir", "Haus", "Gestern"], a: 0 },
+        { q: "Wie reagiert man auf 'Kulchi bikhir'?", o: ["Bikhir, l7amdullah", "Lla", "Beslama"], a: 0 },
+        { q: "Was bedeutet 'w' in 'w enta'?", o: ["Wer", "Und", "Wo"], a: 1 },
+        { q: "Ist es in Marokko üblich, sofort von Problemen zu erzählen?", o: ["Ja, immer", "Nein, man sagt erst 'Labas'", "Nur bei Fremden"], a: 1 },
+        { q: "Kif dayr ist...", o: ["Hocharabisch", "Darija", "Französisch"], a: 1 }
+    ];
+
+    let currentQ = 0;
+    let score = 0;
+
+    function loadQuestion() {
+        const quizBox = document.getElementById('quiz-box');
+        
+        if(currentQ >= quizData.length) {
+            document.getElementById('progress-fill').style.width = "100%";
+            quizBox.innerHTML = `
+                <div style="text-align: center;">
+                    <h3>Ergebnis: ${score}/${quizData.length} 🎉</h3>
+                    <p>Mzyan! Du beherrschst den marokkanischen Smalltalk.</p>
+                    <button class="restart-btn" style="padding:12px 25px; background:var(--primary-color); color:white; border:none; border-radius:8px; cursor:pointer;" onclick="restartQuiz()">Nochmal 🔄</button>
+                </div>`;
+            return;
+        }
+        
+        const progress = (currentQ / quizData.length) * 100;
+        document.getElementById('progress-fill').style.width = progress + "%";
+
+        quizBox.innerHTML = `
+            <span class="question" id="quiz-question"></span>
+            <div class="options" id="quiz-options"></div>
+            <div id="quiz-footer" style="text-align: center;">
+                <p id="quiz-result" style="margin-top: 15px; font-weight: bold;"></p>
+            </div>`;
+
+        const data = quizData[currentQ];
+        document.getElementById('quiz-question').innerText = `Frage ${currentQ + 1}: ${data.q}`;
+        const optionsContainer = document.getElementById('quiz-options');
+        
+        data.o.forEach((opt, index) => {
+            const btn = document.createElement('button');
+            btn.className = 'option-btn';
+            btn.innerText = opt;
+            btn.onclick = () => checkAnswer(index, btn);
+            optionsContainer.appendChild(btn);
+        });
+    }
+
+    function checkAnswer(index, btn) {
+        const correct = quizData[currentQ].a;
+        const btns = document.querySelectorAll('.option-btn');
+        btns.forEach(b => b.disabled = true);
+
+        if(index === correct) {
+            btn.classList.add('correct');
+            document.getElementById('quiz-result').innerText = "Richtig! ✅";
+            score++;
+        } else {
+            btn.classList.add('wrong');
+            btns[correct].classList.add('correct');
+            document.getElementById('quiz-result').innerText = "Leider falsch. ❌";
+        }
+
+        setTimeout(() => {
+            currentQ++;
+            loadQuestion();
+        }, 1500);
+    }
+
+    function restartQuiz() {
+        currentQ = 0;
+        score = 0;
+        loadQuestion();
+    }
+
+    loadQuestion();
+</script>
+
+</body>
+</html>
