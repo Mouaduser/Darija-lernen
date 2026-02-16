@@ -1,1 +1,304 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11. Gender in Darija 🚻</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c1272d;
+            --bg-color: #fdfcfb;
+            --card-bg: #ffffff;
+            --text-color: #333;
+            --table-header-bg: #fdf2e9;
+            --border-color: #f5d5c5;
+            --success: #27ae60;
+            --error: #e74c3c;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 18px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .back-btn:hover { background-color: var(--accent-color); }
+
+        .lesson-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            margin-bottom: 30px;
+        }
+
+        header {
+            border-bottom: 3px solid var(--accent-color);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+        }
+
+        h1 { color: var(--primary-color); font-size: 1.5rem; margin: 0; }
+        h2 { color: var(--accent-color); font-size: 1.2rem; margin-top: 30px; border-left: 4px solid var(--accent-color); padding-left: 10px; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        th { background-color: var(--table-header-bg); font-weight: bold; }
+
+        .quiz-container {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+        }
+        .question { font-weight: bold; margin-bottom: 15px; display: block; }
+        .options { display: grid; gap: 10px; }
+        .option-btn {
+            padding: 12px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+            text-align: left;
+            font-size: 1rem;
+        }
+        .option-btn:hover { background: #f0f0f0; border-color: var(--accent-color); }
+        .correct { background: var(--success) !important; color: white; border-color: var(--success); }
+        .wrong { background: var(--error) !important; color: white; border-color: var(--error); }
+
+        .progress-bar {
+            height: 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        #progress-fill {
+            height: 100%;
+            background-color: var(--accent-color);
+            width: 0%;
+            transition: 0.5s;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.8rem;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        @media screen and (max-width: 600px) {
+            table, thead, tbody, th, td, tr { display: block; }
+            thead tr { position: absolute; top: -9999px; left: -9999px; }
+            tr { border: 1px solid var(--border-color); margin-bottom: 15px; border-radius: 8px; background: #fff; }
+            td { border: none; border-bottom: 1px solid #f9e6dc; position: relative; padding-left: 45%; text-align: right; min-height: 40px; }
+            td:last-child { border-bottom: none; }
+            td:before {
+                content: attr(data-label);
+                position: absolute; left: 10px; width: 40%; text-align: left;
+                font-weight: bold; color: var(--primary-color); font-size: 0.8rem; text-transform: uppercase;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<a href="index.html" class="back-btn">← Zur Übersicht</a>
+
+<div class="lesson-card">
+    <header>
+        <h1>11. Geschlecht in Darija 🚻</h1>
+        <p style="color: #666; margin: 5px 0 0 0;">Die Zauberformel lautet: Achte auf das "A" am Ende!</p>
+    </header>
+
+    <h2>1. Die Grundregel 📏</h2>
+    <p>In Darija gibt es meist nur zwei Geschlechter: Männlich und Weiblich. Es gibt keinen neutralen Artikel wie "das".</p>
+    
+    <table>
+        <thead>
+        <tr>
+            <th>Geschlecht</th>
+            <th>Merkmal</th>
+            <th>Beispiel</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="Geschlecht"><strong>Männlich</strong></td>
+            <td data-label="Merkmal">Endet meist auf Konsonant</td>
+            <td data-label="Beispiel">Mzyan (Gut)</td>
+        </tr>
+        <tr>
+            <td data-label="Geschlecht"><strong>Weiblich</strong></td>
+            <td data-label="Merkmal">Endet meist auf <strong>-a</strong></td>
+            <td data-label="Beispiel">Mzyan<strong>a</strong> (Gut)</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2>2. Adjektive anpassen 🎨</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Deutsch</th>
+            <th>Männlich</th>
+            <th>Weiblich</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="Deutsch">Groß</td>
+            <td data-label="Männlich">Kbir</td>
+            <td data-label="Weiblich">Kbir<strong>a</strong></td>
+        </tr>
+        <tr>
+            <td data-label="Deutsch">Klein</td>
+            <td data-label="Männlich">Sghir</td>
+            <td data-label="Weiblich">Sghir<strong>a</strong></td>
+        </tr>
+        <tr>
+            <td data-label="Deutsch">Schön</td>
+            <td data-label="Männlich">Zwin</td>
+            <td data-label="Weiblich">Zwin<strong>a</strong></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div style="background: #f0f7ff; padding: 15px; border-radius: 8px; border-left: 5px solid var(--primary-color); margin-top: 20px;">
+        <strong>Wichtig:</strong> Wenn du eine Frau fragst "Wie geht's?", sagst du: <em>Kif dayr<strong>a</strong>?</em> Bei einem Mann sagst du: <em>Kif dayr?</em>
+    </div>
+</div>
+
+<div class="lesson-card quiz-container">
+    <h2>Gender-Quiz 🧠</h2>
+    <div class="progress-bar"><div id="progress-fill"></div></div>
+    <div id="quiz-box">
+        <span class="question" id="quiz-question">Lädt Frage...</span>
+        <div class="options" id="quiz-options"></div>
+        <div id="quiz-footer" style="text-align: center;">
+            <p id="quiz-result" style="margin-top: 15px; font-weight: bold;"></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p><strong>Rechtlicher Hinweis & Disclaimer:</strong><br>
+    Diese Regeln gelten für die Mehrheit der Substantive und Adjektive. Es gibt Ausnahmen (z.B. Körperteile, die paarweise auftreten, sind oft weiblich ohne -a). Inhalte dienen Bildungszwecken.</p>
+</footer>
+
+<script>
+    const quizData = [
+        { q: "Wie erkennt man meistens ein weibliches Wort in Darija?", o: ["Es endet auf -u", "Es endet auf -a", "Es endet auf -i"], a: 1 },
+        { q: "Wie sagt man 'schön' zu einer Frau?", o: ["Zwin", "Zwina", "Zwine"], a: 1 },
+        { q: "Welche Form ist korrekt für einen Mann: 'Kif ___?'", o: ["dayr", "dayra", "dayre"], a: 0 },
+        { q: "Was bedeutet 'Kbira'?", o: ["Groß (männlich)", "Groß (weiblich)", "Klein (weiblich)"], a: 1 },
+        { q: "Wie wird das Adjektiv 'Sghir' (klein) weiblich?", o: ["Sghiro", "Sghira", "Sghiri"], a: 1 },
+        { q: "Gibt es im Darija ein sächliches Geschlecht (Es)?", o: ["Ja", "Nein, nur m/w", "Nur für Tiere"], a: 1 },
+        { q: "Wie sagst du 'Ich bin gut' als Mann?", o: ["Ana mzyan", "Ana mzyana", "Ana mzyani"], a: 0 },
+        { q: "Wie sagst du 'Ich bin gut' als Frau?", o: ["Ana mzyan", "Ana mzyana", "Ana mzyanu"], a: 1 },
+        { q: "Das Wort 'Far7an' bedeutet glücklich. Wie lautet die weibliche Form?", o: ["Far7ana", "Far7an", "Far7ani"], a: 0 },
+        { q: "Welches Geschlecht hat 'Dar' (Haus)? (Tipp: Es ist eine Ausnahme ohne -a)", o: ["Männlich", "Weiblich", "Neutral"], a: 1 }
+    ];
+
+    let currentQ = 0;
+    let score = 0;
+
+    function loadQuestion() {
+        const quizBox = document.getElementById('quiz-box');
+        
+        if(currentQ >= quizData.length) {
+            document.getElementById('progress-fill').style.width = "100%";
+            quizBox.innerHTML = `
+                <div style="text-align: center;">
+                    <h3>Ergebnis: ${score}/${quizData.length} 🎉</h3>
+                    <p>Mzyan! Du hast das Prinzip von Gender in Darija verstanden.</p>
+                    <button class="option-btn" style="display:block; margin: 20px auto;" onclick="restartQuiz()">Quiz neu starten 🔄</button>
+                </div>`;
+            return;
+        }
+        
+        const progress = (currentQ / quizData.length) * 100;
+        document.getElementById('progress-fill').style.width = progress + "%";
+
+        quizBox.innerHTML = `
+            <span class="question" id="quiz-question"></span>
+            <div class="options" id="quiz-options"></div>
+            <div id="quiz-footer" style="text-align: center;">
+                <p id="quiz-result" style="margin-top: 15px; font-weight: bold;"></p>
+            </div>`;
+
+        const data = quizData[currentQ];
+        document.getElementById('quiz-question').innerText = `Frage ${currentQ + 1}: ${data.q}`;
+        const optionsContainer = document.getElementById('quiz-options');
+        
+        data.o.forEach((opt, index) => {
+            const btn = document.createElement('button');
+            btn.className = 'option-btn';
+            btn.innerText = opt;
+            btn.onclick = () => checkAnswer(index, btn);
+            optionsContainer.appendChild(btn);
+        });
+    }
+
+    function checkAnswer(index, btn) {
+        const correct = quizData[currentQ].a;
+        const btns = document.querySelectorAll('.option-btn');
+        btns.forEach(b => b.disabled = true);
+
+        if(index === correct) {
+            btn.classList.add('correct');
+            document.getElementById('quiz-result').innerText = "Richtig! ✅";
+            score++;
+        } else {
+            btn.classList.add('wrong');
+            btns[correct].classList.add('correct');
+            document.getElementById('quiz-result').innerText = "Falsch. ❌";
+        }
+
+        setTimeout(() => {
+            currentQ++;
+            loadQuestion();
+        }, 1500);
+    }
+
+    function restartQuiz() {
+        currentQ = 0;
+        score = 0;
+        loadQuestion();
+    }
+
+    loadQuestion();
+</script>
+
+</body>
+</html>
