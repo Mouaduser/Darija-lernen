@@ -1,1 +1,304 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14. Artikel im Darija 🧩</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c1272d;
+            --bg-color: #fdfcfb;
+            --card-bg: #ffffff;
+            --text-color: #333;
+            --table-header-bg: #fdf2e9;
+            --border-color: #f5d5c5;
+            --success: #27ae60;
+            --error: #e74c3c;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 18px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .back-btn:hover { background-color: var(--accent-color); }
+
+        .lesson-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            margin-bottom: 30px;
+        }
+
+        header {
+            border-bottom: 3px solid var(--accent-color);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+        }
+
+        h1 { color: var(--primary-color); font-size: 1.5rem; margin: 0; }
+        h2 { color: var(--accent-color); font-size: 1.2rem; margin-top: 30px; border-left: 4px solid var(--accent-color); padding-left: 10px; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        th { background-color: var(--table-header-bg); font-weight: bold; }
+
+        .quiz-container {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+        }
+        .question { font-weight: bold; margin-bottom: 15px; display: block; }
+        .options { display: grid; gap: 10px; }
+        .option-btn {
+            padding: 12px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+            text-align: left;
+            font-size: 1rem;
+        }
+        .option-btn:hover { background: #f0f0f0; border-color: var(--accent-color); }
+        .correct { background: var(--success) !important; color: white; border-color: var(--success); }
+        .wrong { background: var(--error) !important; color: white; border-color: var(--error); }
+
+        .progress-bar {
+            height: 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        #progress-fill {
+            height: 100%;
+            background-color: var(--accent-color);
+            width: 0%;
+            transition: 0.5s;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.8rem;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        @media screen and (max-width: 600px) {
+            table, thead, tbody, th, td, tr { display: block; }
+            thead tr { position: absolute; top: -9999px; left: -9999px; }
+            tr { border: 1px solid var(--border-color); margin-bottom: 15px; border-radius: 8px; background: #fff; }
+            td { border: none; border-bottom: 1px solid #f9e6dc; position: relative; padding-left: 45%; text-align: right; min-height: 40px; }
+            td:before {
+                content: attr(data-label);
+                position: absolute; left: 10px; width: 40%; text-align: left;
+                font-weight: bold; color: var(--primary-color); font-size: 0.8rem; text-transform: uppercase;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<a href="#" class="back-btn">← Zur Übersicht</a>
+
+<div class="lesson-card">
+    <header>
+        <h1>14. Bestimmt vs. Unbestimmt 🧩</h1>
+        <p style="color: #666; margin: 5px 0 0 0;">Gute Nachricht: Unbestimmte Artikel gibt es im Darija gar nicht!</p>
+    </header>
+
+    <h2>1. Der unbestimmte Artikel (ein/eine) 🚫</h2>
+    <p>Man lässt ihn einfach weg. Ein Wort allein bedeutet automatisch "ein ...".</p>
+    
+    <table>
+        <thead>
+        <tr>
+            <th>Deutsch</th>
+            <th>Darija</th>
+            <th>Logik</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="Deutsch">Ein Haus</td>
+            <td data-label="Darija">Dar</td>
+            <td data-label="Logik">Kein Extra-Wort nötig.</td>
+        </tr>
+        <tr>
+            <td data-label="Deutsch">Ein Auto</td>
+            <td data-label="Darija">Tomobila</td>
+            <td data-label="Logik">Einfach das Nomen sagen.</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2>2. Der bestimmte Artikel (der/die/das) 🔗</h2>
+    <p>Hier nutzt man das Präfix <strong>L-</strong>. Es wird direkt an das Wort gehängt.</p>
+    <table>
+        <thead>
+        <tr>
+            <th>Deutsch</th>
+            <th>Darija</th>
+            <th>Struktur</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="Deutsch">Das Haus</td>
+            <td data-label="Darija"><strong>L-</strong>dar</td>
+            <td data-label="Struktur">L + Nomen</td>
+        </tr>
+        <tr>
+            <td data-label="Deutsch">Das Auto</td>
+            <td data-label="Darija"><strong>L-</strong>tomobila</td>
+            <td data-label="Struktur">L + Nomen</td>
+        </tr>
+        <tr>
+            <td data-label="Deutsch">Der Junge</td>
+            <td data-label="Darija"><strong>L-</strong>weld</td>
+            <td data-label="Struktur">L + Nomen</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div style="background: #fff8f0; padding: 15px; border-radius: 8px; border: 1px dashed var(--accent-color); margin-top: 20px;">
+        <strong>Pro-Tipp:</strong> Bei manchen Buchstaben (Sonnenbuchstaben wie d, r, s, t) verschmilzt das "L" und wird zum Anfangsbuchstaben des Wortes (z.B. <em>Dar</em> → <em>Addar</em>). Für den Anfang reicht <strong>L-</strong> aber meist aus!
+    </div>
+</div>
+
+<div class="lesson-card quiz-container">
+    <h2>Artikel-Quiz 🧠</h2>
+    <div class="progress-bar"><div id="progress-fill"></div></div>
+    <div id="quiz-box">
+        <span class="question" id="quiz-question">Lädt Frage...</span>
+        <div class="options" id="quiz-options"></div>
+        <div id="quiz-footer" style="text-align: center;">
+            <p id="quiz-result" style="margin-top: 15px; font-weight: bold;"></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p><strong>Rechtlicher Hinweis & Disclaimer:</strong><br>
+    Die Darstellung ist vereinfacht. Im Darija gibt es phonetische Assimilationen (Sonnen- und Mondbuchstaben), die den Artikel L- verändern können. Inhalte dienen der allgemeinen Sprachvermittlung ohne Gewähr auf grammatikalische Vollständigkeit.</p>
+</footer>
+
+<script>
+    const quizData = [
+        { q: "Wie sagt man 'ein Mädchen' (Bnt)?", o: ["L-bnt", "Bnt", "Wa7ed l-bnt"], a: 1 },
+        { q: "Was bedeutet das Präfix 'L-'?", o: ["Ein/Eine", "Der/Die/Das", "Plural"], a: 1 },
+        { q: "Wie heißt 'das Auto' (Tomobila)?", o: ["Tomobila", "L-tomobila", "L-atay"], a: 1 },
+        { q: "Was musst du vor ein Wort setzen, um 'ein...' zu sagen?", o: ["Nichts", "L-", "Al-"], a: 0 },
+        { q: "Übersetze 'der Junge' (Weld):", o: ["Weld", "L-weld", "L-bnt"], a: 1 },
+        { q: "Was bedeutet 'Atay'?", o: ["Der Tee", "Ein Tee", "Zucker"], a: 1 },
+        { q: "Wie würde 'der Tee' heißen?", o: ["L-atay", "Atay", "Atay-l"], a: 0 },
+        { q: "Gibt es im Darija verschiedene Artikel für männlich und weiblich?", o: ["Ja (L und La)", "Nein, nur L-", "Nur im Plural"], a: 1 },
+        { q: "Wie übersetzt man 'L-dar'?", o: ["Ein Haus", "Das Haus", "Häuser"], a: 1 },
+        { q: "Womit verschmilzt der Artikel L- im Darija?", o: ["Mit dem Adjektiv", "Direkt mit dem Nomen", "Mit dem Verb"], a: 1 }
+    ];
+
+    let currentQ = 0;
+    let score = 0;
+
+    function loadQuestion() {
+        const quizBox = document.getElementById('quiz-box');
+        
+        if(currentQ >= quizData.length) {
+            document.getElementById('progress-fill').style.width = "100%";
+            quizBox.innerHTML = `
+                <div style="text-align: center;">
+                    <h3>Ergebnis: ${score}/${quizData.length} 🏆</h3>
+                    <p>Mzyan! Du hast das System der Artikel verstanden.</p>
+                    <button class="option-btn" style="display:block; margin: 20px auto;" onclick="restartQuiz()">Quiz neu starten 🔄</button>
+                </div>`;
+            return;
+        }
+        
+        const progress = (currentQ / quizData.length) * 100;
+        document.getElementById('progress-fill').style.width = progress + "%";
+
+        quizBox.innerHTML = `
+            <span class="question" id="quiz-question"></span>
+            <div class="options" id="quiz-options"></div>
+            <div id="quiz-footer" style="text-align: center;">
+                <p id="quiz-result" style="margin-top: 15px; font-weight: bold;"></p>
+            </div>`;
+
+        const data = quizData[currentQ];
+        document.getElementById('quiz-question').innerText = `Frage ${currentQ + 1}: ${data.q}`;
+        const optionsContainer = document.getElementById('quiz-options');
+        
+        data.o.forEach((opt, index) => {
+            const btn = document.createElement('button');
+            btn.className = 'option-btn';
+            btn.innerText = opt;
+            btn.onclick = () => checkAnswer(index, btn);
+            optionsContainer.appendChild(btn);
+        });
+    }
+
+    function checkAnswer(index, btn) {
+        const correct = quizData[currentQ].a;
+        const btns = document.querySelectorAll('.option-btn');
+        btns.forEach(b => b.disabled = true);
+
+        if(index === correct) {
+            btn.classList.add('correct');
+            document.getElementById('quiz-result').innerText = "Richtig! ✅";
+            score++;
+        } else {
+            btn.classList.add('wrong');
+            btns[correct].classList.add('correct');
+            document.getElementById('quiz-result').innerText = "Falsch. ❌";
+        }
+
+        setTimeout(() => {
+            currentQ++;
+            loadQuestion();
+        }, 1500);
+    }
+
+    function restartQuiz() {
+        currentQ = 0;
+        score = 0;
+        loadQuestion();
+    }
+
+    loadQuestion();
+</script>
+
+</body>
+</html>
