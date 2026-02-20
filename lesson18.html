@@ -1,1 +1,295 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18. Verneinung im Darija ❌</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c1272d;
+            --bg-color: #fdfcfb;
+            --card-bg: #ffffff;
+            --text-color: #333;
+            --table-header-bg: #fdf2e9;
+            --border-color: #f5d5c5;
+            --success: #27ae60;
+            --error: #e74c3c;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 18px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .lesson-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            margin-bottom: 30px;
+        }
+
+        header {
+            border-bottom: 3px solid var(--accent-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+
+        h1 { color: var(--primary-color); font-size: 1.4rem; margin: 0; }
+        h2 { color: var(--accent-color); font-size: 1.1rem; margin-top: 25px; border-left: 4px solid var(--accent-color); padding-left: 10px; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        th { background-color: var(--table-header-bg); font-weight: bold; }
+
+        .quiz-container {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+        }
+        .question { font-weight: bold; margin-bottom: 15px; display: block; font-size: 1rem; }
+        .options { display: grid; gap: 8px; }
+        .option-btn {
+            padding: 12px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+        .option-btn:hover { background: #f0f0f0; border-color: var(--accent-color); }
+        .correct { background: var(--success) !important; color: white; border-color: var(--success); }
+        .wrong { background: var(--error) !important; color: white; border-color: var(--error); }
+
+        .progress-bar {
+            height: 8px;
+            background-color: #eee;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        #progress-fill {
+            height: 100%;
+            background-color: var(--accent-color);
+            width: 0%;
+            transition: 0.5s;
+        }
+
+        .formula-box {
+            background: #fff5f5;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid var(--accent-color);
+            text-align: center;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.75rem;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        @media screen and (max-width: 600px) {
+            table, thead, tbody, th, td, tr { display: block; }
+            thead tr { position: absolute; top: -9999px; left: -9999px; }
+            tr { border: 1px solid var(--border-color); margin-bottom: 10px; border-radius: 8px; }
+            td { border: none; border-bottom: 1px solid #eee; position: relative; padding-left: 45%; text-align: right; }
+            td:before {
+                content: attr(data-label);
+                position: absolute; left: 10px; width: 40%; text-align: left;
+                font-weight: bold; color: var(--primary-color);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<a href="#" class="back-btn">← Übersicht</a>
+
+<div class="lesson-card">
+    <header>
+        <h1>18. Verneinung: Nein sagen ❌</h1>
+        <p style="color: #666; margin: 5px 0 0 0;">In Darija nutzen wir das "MA...-SH" Sandwich!</p>
+    </header>
+
+    <h2>1. Das Sandwich-Prinzip 🥪</h2>
+    <p>Um ein Verb oder ein Wort zu verneinen, setzt du <strong>Ma</strong> an den Anfang und <strong>-sh</strong> an das Ende.</p>
+    
+    <div class="formula-box">
+        MA + [WORT] + SH
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Positiv</th>
+                <th>Negativ</th>
+                <th>Bedeutung</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Positiv">Mzyan (Gut)</td>
+                <td data-label="Negativ"><strong>Ma</strong>mzyan<strong>sh</strong></td>
+                <td data-label="Bedeutung">Nicht gut</td>
+            </tr>
+            <tr>
+                <td data-label="Positiv">3ndi (Ich habe)</td>
+                <td data-label="Negativ"><strong>Ma</strong>3ndi<strong>sh</strong></td>
+                <td data-label="Bedeutung">Ich habe nicht</td>
+            </tr>
+            <tr>
+                <td data-label="Positiv">Khddam (Arbeitend)</td>
+                <td data-label="Negativ"><strong>Ma</strong>khddam<strong>sh</strong></td>
+                <td data-label="Bedeutung">Arbeitet nicht</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>2. Die Ausnahme: "Nicht sein" 👤</h2>
+    <p>Wenn du "Ich bin nicht" oder "Du bist nicht" sagst, nutzt du das Wort <strong>Mashi</strong>.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Deutsch</th>
+                <th>Darija</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Deutsch">Ich bin nicht...</td>
+                <td data-label="Darija">Ana <strong>mashi</strong>...</td>
+            </tr>
+            <tr>
+                <td data-label="Deutsch">Das ist nicht...</td>
+                <td data-label="Darija">Hada <strong>mashi</strong>...</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="lesson-card quiz-container">
+    <h2>Negation Quiz 🧠</h2>
+    <div class="progress-bar"><div id="progress-fill"></div></div>
+    <div id="quiz-box">
+        <span class="question" id="quiz-question">Lädt Frage...</span>
+        <div class="options" id="quiz-options"></div>
+        <div id="quiz-footer" style="text-align: center;">
+            <p id="quiz-result" style="margin-top: 15px; font-weight: bold;"></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p><strong>Rechtlicher Hinweis:</strong><br>
+    Die Verneinung kann je nach Region leicht variieren (z.B. Weglassen des -sh in manchen nördlichen Dialekten). Diese Lektion lehrt den marokkanischen Standard. Die Inhalte dienen der privaten Weiterbildung. Keine Haftung für Anwendungsfehler.</p>
+</footer>
+
+<script>
+    const quizData = [
+        { q: "Was ist das 'Sandwich' der Verneinung?", o: ["La...-sh", "Ma...-sh", "Ma...-la"], a: 1 },
+        { q: "Wie heißt 'Ich habe nicht'?", o: ["Ma3ndish", "Ma3ndi", "La3ndi"], a: 0 },
+        { q: "Was bedeutet 'Mamzyansh'?", o: ["Sehr gut", "Nicht gut", "Vielleicht gut"], a: 1 },
+        { q: "Übersetze 'Ich bin nicht' (Adjektiv folgend):", o: ["Ana mashi", "Ana ma...sh", "Ana la"], a: 0 },
+        { q: "Wie verneint man 'Zwin' (Schön)?", o: ["Mazwinsh", "Mazwin", "Lazwinsh"], a: 0 },
+        { q: "Was bedeutet 'Mashi' allein?", o: ["Ja", "Nicht / Ist nicht", "Und"], a: 1 },
+        { q: "Übersetze: 'Er hat nicht' (3ndu)", o: ["Ma3ndush", "Ma3ndsh", "Ma3ndksh"], a: 0 },
+        { q: "Wie sagst du 'Nicht glücklich' (Far7an)?", o: ["Mafar7ansh", "Lafar7an", "Mafar7an"], a: 0 },
+        { q: "Wird das '-sh' am Anfang oder Ende angehängt?", o: ["Anfang", "Ende", "Gar nicht"], a: 1 },
+        { q: "Was sagst du, wenn dir etwas NICHT gehört (Dyali)?", o: ["Madyalish", "Ladyali", "Madyali"], a: 0 }
+    ];
+
+    let currentQ = 0;
+    let score = 0;
+
+    function loadQuestion() {
+        const quizBox = document.getElementById('quiz-box');
+        if(currentQ >= quizData.length) {
+            document.getElementById('progress-fill').style.width = "100%";
+            quizBox.innerHTML = `<div style="text-align: center;">
+                <h3>Ergebnis: ${score}/${quizData.length} 🏆</h3>
+                <p>Mzyan! Du kannst jetzt 'Nein' sagen wie ein Profi.</p>
+                <button class="option-btn" style="display:block; margin: 15px auto;" onclick="location.reload()">Neustart 🔄</button>
+            </div>`;
+            return;
+        }
+        
+        document.getElementById('progress-fill').style.width = (currentQ / quizData.length) * 100 + "%";
+        const data = quizData[currentQ];
+        document.getElementById('quiz-question').innerText = `Frage ${currentQ + 1}: ${data.q}`;
+        const optionsContainer = document.getElementById('quiz-options');
+        optionsContainer.innerHTML = '';
+        
+        data.o.forEach((opt, index) => {
+            const btn = document.createElement('button');
+            btn.className = 'option-btn';
+            btn.innerText = opt;
+            btn.onclick = () => checkAnswer(index, btn);
+            optionsContainer.appendChild(btn);
+        });
+    }
+
+    function checkAnswer(index, btn) {
+        const correct = quizData[currentQ].a;
+        const btns = document.querySelectorAll('.option-btn');
+        btns.forEach(b => b.disabled = true);
+
+        if(index === correct) {
+            btn.classList.add('correct');
+            document.getElementById('quiz-result').innerText = "Richtig! ✅";
+            score++;
+        } else {
+            btn.classList.add('wrong');
+            btns[correct].classList.add('correct');
+            document.getElementById('quiz-result').innerText = "Falsch! ❌";
+        }
+
+        setTimeout(() => {
+            currentQ++;
+            document.getElementById('quiz-result').innerText = "";
+            loadQuestion();
+        }, 1500);
+    }
+
+    loadQuestion();
+</script>
+
+</body>
+</html>
