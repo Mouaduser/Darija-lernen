@@ -90,80 +90,54 @@
         th, td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
         th { background: var(--morocco-red); color: white; }
 
-footer {
-    background-color: #2c2f38; /* Dunkler Hintergrund wie im Bild */
+.simple-footer {
+    background-color: #1a1a1a; /* Edles Schwarz-Grau */
     color: #ffffff;
-    padding: 40px 20px 20px 20px;
-    font-family: sans-serif;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-}
-
-.footer-section {
-    flex: 1;
-    min-width: 300px;
-    margin-bottom: 20px;
-}
-
-.footer-title {
-    background-color: #24a1d5; /* Blaues Label */
-    display: inline-block;
-    padding: 5px 15px;
-    font-size: 1.1rem;
-    margin-bottom: 0;
-}
-
-/* Die blaue Linie unter der Überschrift */
-.footer-section::after {
-    content: "";
-    display: block;
-    height: 2px;
-    background-color: #24a1d5;
-    width: 100%;
-    margin-top: -1px;
-}
-
-.footer-section p {
-    margin-top: 15px;
-    line-height: 1.6;
-    color: #d1d1d1;
-}
-
-.footer-links {
-    list-style: none;
-    padding: 0;
-    margin-top: 15px;
-}
-
-.footer-links li {
-    border-bottom: 1px solid #3e424d; /* Trennlinien wie im Screenshot */
-    padding: 10px 0;
-}
-
-.footer-links a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.footer-links a:hover {
-    color: #24a1d5;
-}
-
-.footer-bottom {
+    padding: 30px 20px;
     text-align: center;
-    margin-top: 30px;
-    border-top: 1px solid #3e424d;
-    padding-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.copyright {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.footer-nav a {
+    color: #bbb;
+    text-decoration: none;
     font-size: 0.9rem;
-    color: #888;
-}    </style>
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #ffffff; /* Wird hell beim Drüberfahren */
+}
+
+.separator {
+    color: #444;
+    margin: 0 10px;
+    user-select: none;
+}
+
+/* Optimierung für Handys */
+@media (max-width: 600px) {
+    .footer-nav a {
+        display: block;
+        margin: 10px 0;
+    }
+    .separator {
+        display: none;
+    }
+}
+    
+    </style>
 </head>
 <body>
 
@@ -315,25 +289,17 @@ footer {
         </table>
     </section>
 
-<footer>
-    <div class="footer-container">
-        <div class="footer-section">
-            <h3 class="footer-title">About Us</h3>
-            <p>Herzlich willkommen bei der Darija Masterclass! Wir bringen dir die Sprache und Kultur Marokkos näher. Entdecke innovative Lernmethoden und praktische Tipps für deinen Alltag.</p>
-        </div>
-
-        <div class="footer-section">
-            <h3 class="footer-title">Rechtliches</h3>
-            <ul class="footer-links">
-                <li><a href="#">Cookie-Richtlinie (EU)</a></li>
-                <li><a href="#">Datenschutz</a></li>
-                <li><a href="#">Impressum</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <p>&copy; 2026 Darija Masterclass. Besuche uns in Casablanca.</p>
+    <footer class="simple-footer">
+    <div class="footer-content">
+        <p class="copyright">&copy; 2026 <strong>Darija Masterclass</strong>. Besuche uns in Casablanca.</p>
+        
+        <nav class="footer-nav">
+            <a href="/cookie-richtlinie">Cookie-Richtlinie (EU)</a>
+            <span class="separator">|</span>
+            <a href="/datenschutz">Datenschutz</a>
+            <span class="separator">|</span>
+            <a href="/impressum">Impressum</a>
+        </nav>
     </div>
 </footer>
 
